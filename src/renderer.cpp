@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+SDL_Renderer *sdl_renderer;
+
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
                    const std::size_t grid_width, const std::size_t grid_height)
@@ -31,14 +33,22 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "Renderer could not be created.\n";
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
+
 }
 
 Renderer::~Renderer() {
+  SDL_DestroyRenderer( sdl_renderer );
   SDL_DestroyWindow(sdl_window);
+  sdl_window = NULL;
+  sdl_renderer = NULL;
+
+  //Quit SDL subsystems
+  IMG_Quit();
   SDL_Quit();
 }
 
-void Renderer::Render(Snake const snake, SDL_Point const &food) {
+
+void Renderer::Render(Snake snake, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -70,6 +80,26 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
   SDL_RenderFillRect(sdl_renderer, &block);
+
+  //Go through particles
+  for( int i = 0; i < TOTAL_PARTICLES; ++i )
+  {
+      //Delete and replace dead particles
+      if( snake.particles[ i ]->isDead() )
+      {
+          std::cout << "delete particle " << i << std::endl;
+          delete snake.particles[ i ];
+          snake.particles[ i ] = new Particle( block.x, block.y );
+          std::cout << "create particle " << i << " " << block.x << ":" << block.y << std::endl;
+      }
+  }
+
+  //Show particles
+  for( int i = 0; i < TOTAL_PARTICLES; ++i )
+  {
+      std::cout << "render particle " << i << std::endl;
+      snake.particles[ i ]->render();
+  }
 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);

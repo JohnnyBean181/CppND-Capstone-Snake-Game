@@ -7,6 +7,14 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1)) {
+
+  // load images to create particles
+  LoadMedia();
+
+  // decorate snake's head with fancy particles 
+  snake.Load_Particles();
+
+  // place food randomly on the floor
   PlaceFood();
 }
 
@@ -48,6 +56,11 @@ void Game::Run(Controller const &controller, Renderer &renderer,
       SDL_Delay(target_frame_duration - frame_duration);
     }
   }
+}
+
+void Game::Stop() {
+
+  UnLoadMedia();
 }
 
 void Game::PlaceFood() {

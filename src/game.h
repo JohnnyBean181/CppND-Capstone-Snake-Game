@@ -6,12 +6,14 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "resource.h"
 
 class Game {
  public:
   Game(std::size_t grid_width, std::size_t grid_height);
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
+  void Stop();
   int GetScore() const;
   int GetSize() const;
 
@@ -28,6 +30,7 @@ class Game {
 
   void PlaceFood();
   void Update();
+
 };
 
 #endif

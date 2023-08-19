@@ -3,7 +3,17 @@
 
 #include <vector>
 #include "SDL.h"
+#include "particle.h"
 #include "snake.h"
+#include "resource.h"
+
+//Scene textures
+extern LTexture gRedTexture;
+extern LTexture gGreenTexture;
+extern LTexture gBlueTexture;
+extern LTexture gShimmerTexture;
+
+extern SDL_Renderer *sdl_renderer;
 
 class Renderer {
  public:
@@ -16,7 +26,8 @@ class Renderer {
 
  private:
   SDL_Window *sdl_window;
-  SDL_Renderer *sdl_renderer;
+  // set sdl_renderer as global variable.
+  //SDL_Renderer *sdl_renderer;
 
   const std::size_t screen_width;
   const std::size_t screen_height;

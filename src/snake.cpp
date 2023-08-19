@@ -2,6 +2,32 @@
 #include <cmath>
 #include <iostream>
 
+Snake::~Snake()
+{
+  //Delete particles
+    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+    {
+        delete particles[ i ];
+    }
+}
+
+void Snake::Load_Particles() {
+  // locate block
+  SDL_Rect block;
+  block.w = 640 / grid_width;
+  block.h = 640 / grid_height;
+
+  block.x = static_cast<int>(head_x) * block.w;
+  block.y = static_cast<int>(head_y) * block.h;
+
+  //Initialize particles
+  for( int i = 0; i < TOTAL_PARTICLES; ++i )
+  {
+      std::cout << "creating particle " << i << " " << block.x << ":" << block.y << std::endl;
+      particles[ i ] = new Particle( block.x, block.y );
+  }
+}
+
 void Snake::Update() {
   SDL_Point prev_cell{
       static_cast<int>(head_x),
