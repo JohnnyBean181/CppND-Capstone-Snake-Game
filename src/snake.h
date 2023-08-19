@@ -20,6 +20,7 @@ class Snake {
 
   // decorate snake's head with fancy particles 
   void Load_Particles();
+  void UpdateParticles();
 
   void Update();
 

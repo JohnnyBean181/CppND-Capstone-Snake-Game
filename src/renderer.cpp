@@ -48,7 +48,7 @@ Renderer::~Renderer() {
 }
 
 
-void Renderer::Render(Snake snake, SDL_Point const &food) {
+void Renderer::Render(Snake& snake, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -81,23 +81,12 @@ void Renderer::Render(Snake snake, SDL_Point const &food) {
   }
   SDL_RenderFillRect(sdl_renderer, &block);
 
-  //Go through particles
-  for( int i = 0; i < TOTAL_PARTICLES; ++i )
-  {
-      //Delete and replace dead particles
-      if( snake.particles[ i ]->isDead() )
-      {
-          std::cout << "delete particle " << i << std::endl;
-          delete snake.particles[ i ];
-          snake.particles[ i ] = new Particle( block.x, block.y );
-          std::cout << "create particle " << i << " " << block.x << ":" << block.y << std::endl;
-      }
-  }
+  // Render snake's particles
+  snake.UpdateParticles();
 
   //Show particles
   for( int i = 0; i < TOTAL_PARTICLES; ++i )
   {
-      std::cout << "render particle " << i << std::endl;
       snake.particles[ i ]->render();
   }
 

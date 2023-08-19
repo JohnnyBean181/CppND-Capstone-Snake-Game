@@ -10,7 +10,6 @@ Particle::Particle( int x, int y )
 
     //Initialize animation
     mFrame = rand() % 5;
-    std::cout << "mFrame is " << mFrame << std::endl;
 
     //Set type
     switch( rand() % 3 )
@@ -35,7 +34,6 @@ void Particle::render()
 
     //Animate
     mFrame++;
-    std::cout << "mFrame is " << mFrame << std::endl;
 }
 
 bool Particle::isDead()

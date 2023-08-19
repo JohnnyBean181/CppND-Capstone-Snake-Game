@@ -87,8 +87,6 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 		renderQuad.h = clip->h;
 	}
 
-    // std::cout << x << ":" << y << ":" << mWidth << ":" << mHeight << std::endl;
-
 	//Render to screen
 	SDL_RenderCopyEx( sdl_renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }

@@ -23,7 +23,6 @@ void Snake::Load_Particles() {
   //Initialize particles
   for( int i = 0; i < TOTAL_PARTICLES; ++i )
   {
-      std::cout << "creating particle " << i << " " << block.x << ":" << block.y << std::endl;
       particles[ i ] = new Particle( block.x, block.y );
   }
 }
@@ -42,6 +41,27 @@ void Snake::Update() {
   // cell.
   if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) {
     UpdateBody(current_cell, prev_cell);
+  }
+}
+
+void Snake::UpdateParticles() {
+  // locate block
+  SDL_Rect block;
+  block.w = 640 / grid_width;
+  block.h = 640 / grid_height;
+
+  block.x = static_cast<int>(head_x) * block.w;
+  block.y = static_cast<int>(head_y) * block.h;
+
+  //Go through particles
+  for( int i = 0; i < TOTAL_PARTICLES; ++i )
+  {
+      //Delete and replace dead particles
+      if( particles[ i ]->isDead() )
+      {
+          delete particles[ i ];
+          particles[ i ] = new Particle( block.x, block.y );
+      }
   }
 }
 
