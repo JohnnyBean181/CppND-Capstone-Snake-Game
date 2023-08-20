@@ -4,6 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <iostream>
+#include <memory>
 #include "SDL.h"
 #include "particle.h"
 #include "resource.h"
@@ -17,8 +18,10 @@ class Snake {
         grid_height(grid_height),
         head_x(grid_width / 2),
         head_y(grid_height / 2){
-          // decorate snake's head with fancy particles 
-          Load_Particles();
+          if (manual) {
+            // decorate snake's head with fancy particles 
+            Load_Particles();
+          }
         }
 
   ~Snake();
@@ -36,9 +39,11 @@ class Snake {
   float head_x;
   float head_y;
   std::vector<SDL_Point> body;
+  //Flag to identify if it's robot snake.
+  bool manual{true};
 
   //The particles
-	Particle* particles[ TOTAL_PARTICLES ];
+	std::unique_ptr<Particle> particles[ TOTAL_PARTICLES ];
 
   int GetGridWidth();
   int GetGridHeight();

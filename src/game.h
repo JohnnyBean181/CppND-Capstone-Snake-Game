@@ -9,6 +9,7 @@
 #include "renderer.h"
 #include "snake.h"
 #include "resource.h"
+#include "autosnake.h"
 
 class Game {
  public:
@@ -21,6 +22,7 @@ class Game {
  private:
   // Snake snake;
   std::unique_ptr<Snake> _snake;
+  std::unique_ptr<AutoSnake> _robotSnake;
   SDL_Point food;
 
   std::random_device dev;

@@ -581,6 +581,25 @@ CMakeFiles/SnakeGame.dir/src/controller.cpp.o: /home/johnnybean/Documents/UDacit
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -1123,7 +1142,8 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o: /home/johnnybean/Documents/UDacity/C++/
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
-  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h
+  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
+  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
 
 CMakeFiles/SnakeGame.dir/src/ltexture.cpp.o: /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.cpp \
   /usr/include/stdc-predef.h \
@@ -1696,6 +1716,25 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: /home/johnnybean/Documents/UDacity/C++/
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
   /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -1853,27 +1892,9 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: /home/johnnybean/Documents/UDacity/C++/
   /usr/include/c++/12/bits/random.tcc \
   /usr/include/c++/12/numeric \
   /usr/include/c++/12/bits/stl_numeric.h \
-  /usr/include/c++/12/bit \
   /usr/include/c++/12/pstl/glue_numeric_defs.h \
-  /usr/include/c++/12/pstl/execution_defs.h \
-  /usr/include/c++/12/memory \
-  /usr/include/c++/12/bits/stl_tempbuf.h \
-  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/12/bits/align.h \
-  /usr/include/c++/12/bits/uses_allocator.h \
-  /usr/include/c++/12/bits/unique_ptr.h \
-  /usr/include/c++/12/tuple \
-  /usr/include/c++/12/bits/shared_ptr.h \
-  /usr/include/c++/12/bits/shared_ptr_base.h \
-  /usr/include/c++/12/bits/allocated_ptr.h \
-  /usr/include/c++/12/ext/aligned_buffer.h \
-  /usr/include/c++/12/ext/concurrence.h \
-  /usr/include/c++/12/bits/shared_ptr_atomic.h \
-  /usr/include/c++/12/bits/atomic_base.h \
-  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/12/backward/auto_ptr.h \
-  /usr/include/c++/12/pstl/glue_memory_defs.h \
-  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h
+  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
+  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
 
 CMakeFiles/SnakeGame.dir/src/particle.cpp.o: /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/particle.cpp \
   /usr/include/stdc-predef.h \
@@ -2596,7 +2617,27 @@ CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /home/johnnybean/Documents/UDacity/
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
-  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/snake.h
+  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/snake.h \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
+  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
 
 CMakeFiles/SnakeGame.dir/src/resource.cpp.o: /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.cpp \
   /usr/include/stdc-predef.h \
@@ -3169,6 +3210,25 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -3326,6 +3386,16 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h:
 
+/usr/include/c++/12/pstl/glue_numeric_defs.h:
+
+/usr/include/c++/12/bits/stl_numeric.h:
+
+/usr/include/c++/12/numeric:
+
+/usr/include/x86_64-linux-gnu/c++/12/bits/opt_random.h:
+
+/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.cpp:
+
 /usr/include/c++/12/backward/auto_ptr.h:
 
 /usr/include/c++/12/bits/atomic_lockfree_defines.h:
@@ -3339,16 +3409,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/c++/12/bits/uses_allocator.h:
 
 /usr/include/c++/12/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/12/pstl/glue_numeric_defs.h:
-
-/usr/include/c++/12/bits/stl_numeric.h:
-
-/usr/include/c++/12/numeric:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/opt_random.h:
-
-/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.cpp:
 
 /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/controller.h:
 

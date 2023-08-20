@@ -4,10 +4,10 @@
 Snake::~Snake()
 {
   //Delete particles
-    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+  /*  for( int i = 0; i < TOTAL_PARTICLES; ++i )
     {
         delete particles[ i ];
-    }
+    }*/
 }
 
 void Snake::Load_Particles() {
@@ -22,7 +22,7 @@ void Snake::Load_Particles() {
   //Initialize particles
   for( int i = 0; i < TOTAL_PARTICLES; ++i )
   {
-      particles[ i ] = new Particle( block.x, block.y );
+      particles[ i ] = std::make_unique<Particle>(block.x, block.y);
   }
 }
 
@@ -43,7 +43,9 @@ void Snake::Update() {
   }
 
   // Update the praticles which are used for head decoration.
-  UpdateParticles();
+  if (manual) {
+    UpdateParticles();
+  }
 }
 
 void Snake::UpdateParticles() {
@@ -61,8 +63,10 @@ void Snake::UpdateParticles() {
       //Delete and replace dead particles
       if( particles[ i ]->isDead() )
       {
-          delete particles[ i ];
-          particles[ i ] = new Particle( block.x, block.y );
+          // delete particles[ i ];
+          // particles[ i ] = new Particle( block.x, block.y );
+          std::unique_ptr<Particle> tmp_particle = std::make_unique<Particle>(block.x, block.y);
+          particles[ i ].reset(tmp_particle.release());
       }
   }
 }
