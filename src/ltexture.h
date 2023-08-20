@@ -5,8 +5,9 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
+#include <iostream>
 
-extern SDL_Renderer *sdl_renderer;
+// extern SDL_Renderer *sdl_renderer;
 
 //Texture wrapper class
 class LTexture
@@ -19,7 +20,7 @@ class LTexture
 		~LTexture();
 
 		//Loads image at specified path
-		bool loadFromFile( std::string path);
+		bool loadFromFile( SDL_Renderer *sdl_renderer, std::string path);
 
 		//Deallocates texture
 		void free();
@@ -28,7 +29,7 @@ class LTexture
 		void setAlpha( Uint8 alpha );
 		
 		//Renders texture at given point
-		void render( int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE );
+		void render( SDL_Renderer *sdl_renderer, int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE );
 
 		//Gets image dimensions
 		int getWidth();

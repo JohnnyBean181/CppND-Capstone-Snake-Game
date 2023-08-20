@@ -2,6 +2,8 @@
 #define GAME_H
 
 #include <random>
+#include <memory>
+#include <iostream>
 #include "SDL.h"
 #include "controller.h"
 #include "renderer.h"
@@ -13,12 +15,12 @@ class Game {
   Game(std::size_t grid_width, std::size_t grid_height);
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
-  void Stop();
   int GetScore() const;
   int GetSize() const;
 
  private:
-  Snake snake;
+  // Snake snake;
+  std::unique_ptr<Snake> _snake;
   SDL_Point food;
 
   std::random_device dev;

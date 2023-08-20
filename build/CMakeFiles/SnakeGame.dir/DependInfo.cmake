@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.cpp" "CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o" "gcc" "CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o.d"
   "/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/controller.cpp" "CMakeFiles/SnakeGame.dir/src/controller.cpp.o" "gcc" "CMakeFiles/SnakeGame.dir/src/controller.cpp.o.d"
   "/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.cpp" "CMakeFiles/SnakeGame.dir/src/game.cpp.o" "gcc" "CMakeFiles/SnakeGame.dir/src/game.cpp.o.d"
   "/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.cpp" "CMakeFiles/SnakeGame.dir/src/ltexture.cpp.o" "gcc" "CMakeFiles/SnakeGame.dir/src/ltexture.cpp.o.d"

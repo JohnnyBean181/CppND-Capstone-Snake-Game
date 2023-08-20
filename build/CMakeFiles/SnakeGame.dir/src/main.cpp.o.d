@@ -153,15 +153,8 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
- /usr/include/c++/12/bits/vector.tcc /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h \
- /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/c++/12/stdlib.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/c++/12/math.h /usr/include/c++/12/cmath /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/cmath \
+ /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
@@ -182,7 +175,14 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: \
  /usr/include/c++/12/tr1/modified_bessel_func.tcc \
  /usr/include/c++/12/tr1/poly_hermite.tcc \
  /usr/include/c++/12/tr1/poly_laguerre.tcc \
- /usr/include/c++/12/tr1/riemann_zeta.tcc \
+ /usr/include/c++/12/tr1/riemann_zeta.tcc /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h \
+ /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/c++/12/stdlib.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
+ /usr/include/c++/12/math.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/float.h \
  /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/SDL_audio.h \
@@ -304,5 +304,20 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: \
  /usr/include/c++/12/bits/random.tcc /usr/include/c++/12/numeric \
  /usr/include/c++/12/bits/stl_numeric.h /usr/include/c++/12/bit \
  /usr/include/c++/12/pstl/glue_numeric_defs.h \
- /usr/include/c++/12/pstl/execution_defs.h \
+ /usr/include/c++/12/pstl/execution_defs.h /usr/include/c++/12/memory \
+ /usr/include/c++/12/bits/stl_tempbuf.h \
+ /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/12/bits/align.h \
+ /usr/include/c++/12/bits/uses_allocator.h \
+ /usr/include/c++/12/bits/unique_ptr.h /usr/include/c++/12/tuple \
+ /usr/include/c++/12/bits/shared_ptr.h \
+ /usr/include/c++/12/bits/shared_ptr_base.h \
+ /usr/include/c++/12/bits/allocated_ptr.h \
+ /usr/include/c++/12/ext/aligned_buffer.h \
+ /usr/include/c++/12/ext/concurrence.h \
+ /usr/include/c++/12/bits/shared_ptr_atomic.h \
+ /usr/include/c++/12/bits/atomic_base.h \
+ /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/12/backward/auto_ptr.h \
+ /usr/include/c++/12/pstl/glue_memory_defs.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h

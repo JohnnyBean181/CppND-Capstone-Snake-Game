@@ -1,6 +1,5 @@
 #include "snake.h"
-#include <cmath>
-#include <iostream>
+
 
 Snake::~Snake()
 {
@@ -14,8 +13,8 @@ Snake::~Snake()
 void Snake::Load_Particles() {
   // locate block
   SDL_Rect block;
-  block.w = 640 / grid_width;
-  block.h = 640 / grid_height;
+  block.w = kScreenWidth / grid_width;
+  block.h = kScreenHeight / grid_height;
 
   block.x = static_cast<int>(head_x) * block.w;
   block.y = static_cast<int>(head_y) * block.h;
@@ -42,13 +41,16 @@ void Snake::Update() {
   if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) {
     UpdateBody(current_cell, prev_cell);
   }
+
+  // Update the praticles which are used for head decoration.
+  UpdateParticles();
 }
 
 void Snake::UpdateParticles() {
   // locate block
   SDL_Rect block;
-  block.w = 640 / grid_width;
-  block.h = 640 / grid_height;
+  block.w = kScreenWidth / grid_width;
+  block.h = kScreenHeight / grid_height;
 
   block.x = static_cast<int>(head_x) * block.w;
   block.y = static_cast<int>(head_y) * block.h;
@@ -122,4 +124,12 @@ bool Snake::SnakeCell(int x, int y) {
     }
   }
   return false;
+}
+
+int Snake::GetGridWidth() {
+  return grid_width;
+}
+
+int Snake::GetGridHeight() {
+  return grid_height;
 }

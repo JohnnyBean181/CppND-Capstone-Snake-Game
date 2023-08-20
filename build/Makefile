@@ -129,6 +129,30 @@ SnakeGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/build
 .PHONY : SnakeGame/fast
 
+src/autosnake.o: src/autosnake.cpp.o
+.PHONY : src/autosnake.o
+
+# target to build an object file
+src/autosnake.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o
+.PHONY : src/autosnake.cpp.o
+
+src/autosnake.i: src/autosnake.cpp.i
+.PHONY : src/autosnake.i
+
+# target to preprocess a source file
+src/autosnake.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/autosnake.cpp.i
+.PHONY : src/autosnake.cpp.i
+
+src/autosnake.s: src/autosnake.cpp.s
+.PHONY : src/autosnake.s
+
+# target to generate assembly for a file
+src/autosnake.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/autosnake.cpp.s
+.PHONY : src/autosnake.cpp.s
+
 src/controller.o: src/controller.cpp.o
 .PHONY : src/controller.o
 
@@ -330,6 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SnakeGame"
+	@echo "... src/autosnake.o"
+	@echo "... src/autosnake.i"
+	@echo "... src/autosnake.s"
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"

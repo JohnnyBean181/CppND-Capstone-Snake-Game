@@ -2,6 +2,8 @@
 #define SNAKE_H
 
 #include <vector>
+#include <cmath>
+#include <iostream>
 #include "SDL.h"
 #include "particle.h"
 #include "resource.h"
@@ -14,13 +16,12 @@ class Snake {
       : grid_width(grid_width),
         grid_height(grid_height),
         head_x(grid_width / 2),
-        head_y(grid_height / 2){};
+        head_y(grid_height / 2){
+          // decorate snake's head with fancy particles 
+          Load_Particles();
+        }
 
   ~Snake();
-
-  // decorate snake's head with fancy particles 
-  void Load_Particles();
-  void UpdateParticles();
 
   void Update();
 
@@ -39,9 +40,16 @@ class Snake {
   //The particles
 	Particle* particles[ TOTAL_PARTICLES ];
 
+  int GetGridWidth();
+  int GetGridHeight();
+
  private:
   void UpdateHead();
   void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell);
+  void UpdateParticles();
+
+  // decorate snake's head with fancy particles 
+  void Load_Particles();
 
   bool growing{false};
   int grid_width;

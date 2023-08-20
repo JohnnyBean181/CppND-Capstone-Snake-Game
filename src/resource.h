@@ -2,7 +2,6 @@
 #define RESOURCE_H
 
 #include "ltexture.h"
-#include <iostream>
 
 //Scene textures
 extern LTexture gRedTexture;
@@ -12,10 +11,7 @@ extern LTexture gShimmerTexture;
 
 //Particle count
 static int const TOTAL_PARTICLES = 20;
-
-//func
-bool LoadMedia();
-
-void UnLoadMedia();
+static int const kScreenWidth = 640;
+static int const kScreenHeight = 640;
 
 #endif

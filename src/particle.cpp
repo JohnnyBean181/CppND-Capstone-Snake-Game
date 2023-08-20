@@ -1,6 +1,5 @@
 #include "particle.h"
-#include <cmath>
-#include <iostream>
+
 
 Particle::Particle( int x, int y )
 {
@@ -20,16 +19,16 @@ Particle::Particle( int x, int y )
     }
 }
 
-void Particle::render()
+void Particle::render(SDL_Renderer *sdl_renderer)
 {
     //Show image
 
-    mTexture->render( mPosX, mPosY);
+    mTexture->render( sdl_renderer, mPosX, mPosY);
 
     //Show shimmer
     if( mFrame % 2 == 0 )
     {
-		gShimmerTexture.render( mPosX, mPosY);
+		gShimmerTexture.render( sdl_renderer, mPosX, mPosY);
     }
 
     //Animate

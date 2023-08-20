@@ -1,8 +1,5 @@
 #include "renderer.h"
-#include <iostream>
-#include <string>
 
-SDL_Renderer *sdl_renderer;
 
 Renderer::Renderer(const std::size_t screen_width,
                    const std::size_t screen_height,
@@ -34,9 +31,56 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
 
+  // load image to generate particles.
+  LoadImage();
+}
+
+bool Renderer::LoadImage() {
+
+	//Loading success flag
+	bool success = true;
+
+  //Load red texture
+	if( !gRedTexture.loadFromFile( sdl_renderer, "red.bmp" ) )
+	{
+		printf( "Failed to load red texture!\n" );
+		success = false;
+	}
+
+	//Load green texture
+	if( !gGreenTexture.loadFromFile( sdl_renderer, "green.bmp" ) )
+	{
+		printf( "Failed to load green texture!\n" );
+		success = false;
+	}
+
+	//Load blue texture
+	if( !gBlueTexture.loadFromFile( sdl_renderer, "blue.bmp" ) )
+	{
+		printf( "Failed to load blue texture!\n" );
+		success = false;
+	}
+
+	//Load shimmer texture
+	if( !gShimmerTexture.loadFromFile( sdl_renderer, "shimmer.bmp" ) )
+	{
+		printf( "Failed to load shimmer texture!\n" );
+		success = false;
+	}
+	
+	//Set texture transparency
+	gRedTexture.setAlpha( 192 );
+	gGreenTexture.setAlpha( 192 );
+	gBlueTexture.setAlpha( 192 );
+	gShimmerTexture.setAlpha( 192 );
+
+	return success;
 }
 
 Renderer::~Renderer() {
+  // release loaded image
+  UnloadImage();
+
   SDL_DestroyRenderer( sdl_renderer );
   SDL_DestroyWindow(sdl_window);
   sdl_window = NULL;
@@ -47,8 +91,16 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
+void Renderer::UnloadImage() {
+  //Release loaded images
+	gRedTexture.free();
+	gGreenTexture.free();
+	gBlueTexture.free();
+	gShimmerTexture.free();
+}
 
-void Renderer::Render(Snake& snake, SDL_Point const &food) {
+
+void Renderer::Render(Snake* snake, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -65,16 +117,16 @@ void Renderer::Render(Snake& snake, SDL_Point const &food) {
 
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-  for (SDL_Point const &point : snake.body) {
+  for (SDL_Point const &point : snake->body) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
   // Render snake's head
-  block.x = static_cast<int>(snake.head_x) * block.w;
-  block.y = static_cast<int>(snake.head_y) * block.h;
-  if (snake.alive) {
+  block.x = static_cast<int>(snake->head_x) * block.w;
+  block.y = static_cast<int>(snake->head_y) * block.h;
+  if (snake->alive) {
     SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
   } else {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
@@ -82,12 +134,9 @@ void Renderer::Render(Snake& snake, SDL_Point const &food) {
   SDL_RenderFillRect(sdl_renderer, &block);
 
   // Render snake's particles
-  snake.UpdateParticles();
-
-  //Show particles
   for( int i = 0; i < TOTAL_PARTICLES; ++i )
   {
-      snake.particles[ i ]->render();
+      snake->particles[ i ]->render(sdl_renderer);
   }
 
   // Update Screen
