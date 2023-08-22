@@ -216,6 +216,25 @@ CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o: /home/johnnybean/Documents/UDacity
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/istream \
   /usr/include/c++/12/bits/istream.tcc \
+  /usr/include/c++/12/memory \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/12/bits/align.h \
+  /usr/include/c++/12/bit \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/unique_ptr.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/shared_ptr.h \
+  /usr/include/c++/12/bits/shared_ptr_base.h \
+  /usr/include/c++/12/bits/allocated_ptr.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/ext/concurrence.h \
+  /usr/include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/include/c++/12/bits/atomic_base.h \
+  /usr/include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/12/backward/auto_ptr.h \
+  /usr/include/c++/12/pstl/glue_memory_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -3396,20 +3415,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.cpp:
 
-/usr/include/c++/12/backward/auto_ptr.h:
-
-/usr/include/c++/12/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/12/ext/concurrence.h:
-
-/usr/include/c++/12/bits/shared_ptr_base.h:
-
-/usr/include/c++/12/bits/shared_ptr.h:
-
-/usr/include/c++/12/bits/uses_allocator.h:
-
-/usr/include/c++/12/bits/stl_raw_storage_iter.h:
-
 /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/controller.h:
 
 /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h:
@@ -3444,10 +3449,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/SDL2/SDL_events.h:
 
-/usr/include/c++/12/bits/shared_ptr_atomic.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/amxint8intrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/12/include/avx512bf16vlintrin.h:
 
 /usr/include/SDL2/SDL_video.h:
@@ -3481,12 +3482,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/lib/gcc/x86_64-linux-gnu/12/include/avx512ifmaintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/avx512dqintrin.h:
-
-/usr/include/c++/12/bits/stl_tempbuf.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/keylockerintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/avx512vlintrin.h:
 
 /usr/include/c++/12/bits/random.tcc:
 
@@ -3530,14 +3525,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/xsaveintrin.h:
 
-/usr/include/c++/12/pstl/execution_defs.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/waitpkgintrin.h:
-
-/usr/include/c++/12/bits/unique_ptr.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/uintrintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/12/include/tsxldtrkintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/tbmintrin.h:
@@ -3551,6 +3538,28 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/lib/gcc/x86_64-linux-gnu/12/include/popcntintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/pconfigintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/fxsrintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/clzerointrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/clwbintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/clflushoptintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/cldemoteintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/bmi2intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/bmiintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/adxintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/ia32intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/x86gprintrin.h:
+
+/usr/include/SDL2/SDL_cpuinfo.h:
 
 /usr/include/c++/12/ios:
 
@@ -3574,13 +3583,7 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/bits/specfun.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/12/include/bmi2intrin.h:
-
 /usr/include/alloca.h:
-
-/usr/include/c++/12/bit:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/c++/12/ext/atomicity.h:
 
@@ -3616,6 +3619,8 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
+/usr/include/c++/12/ext/concurrence.h:
+
 /usr/include/SDL2/SDL_gamecontroller.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
@@ -3626,10 +3631,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/c++/12/pstl/glue_memory_defs.h:
-
-/usr/include/SDL2/SDL_main.h:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/SDL2/SDL_assert.h:
@@ -3637,6 +3638,10 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/lzcntintrin.h:
+
+/usr/include/c++/12/bits/std_abs.h:
 
 /usr/include/c++/12/debug/assertions.h:
 
@@ -3649,8 +3654,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/clwbintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
@@ -3665,6 +3668,8 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 /usr/include/SDL2/SDL_mutex.h:
+
+/usr/include/c++/12/bits/uses_allocator.h:
 
 /usr/include/stdlib.h:
 
@@ -3686,14 +3691,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/limits:
 
-/usr/include/c++/12/ext/aligned_buffer.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/avx5124fmapsintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/avx512cdintrin.h:
-
-/usr/include/features-time64.h:
-
 /usr/include/c++/12/cctype:
 
 /usr/include/c++/12/stdexcept:
@@ -3701,6 +3698,8 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/lib/gcc/x86_64-linux-gnu/12/include/wbnoinvdintrin.h:
 
 /usr/include/c++/12/istream:
+
+/usr/include/c++/12/backward/auto_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
@@ -3756,13 +3755,15 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/exception:
 
-/usr/lib/gcc/x86_64-linux-gnu/12/include/clflushoptintrin.h:
-
 /usr/include/c++/12/bits/stl_algobase.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/12/include/adxintrin.h:
-
 /usr/include/c++/12/bits/exception.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/pkuintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/enqcmdintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/c++/12/bits/locale_classes.tcc:
 
@@ -3774,6 +3775,10 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/bits/memoryfwd.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/12/include/mwaitintrin.h:
+
+/usr/include/c++/12/bits/concept_check.h:
+
 /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h:
 
 /usr/include/c++/12/debug/debug.h:
@@ -3784,9 +3789,9 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/bits/stl_iterator_base_types.h:
 
-/usr/include/c++/12/bits/atomic_base.h:
-
 /usr/include/SDL2/SDL_locale.h:
+
+/usr/include/c++/12/bits/atomic_base.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
 
@@ -3874,10 +3879,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/c++/12/bits/align.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
 
 /usr/include/asm-generic/errno-base.h:
@@ -3900,8 +3901,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/12/include/ia32intrin.h:
-
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/c++/12/cstdint:
@@ -3909,6 +3908,8 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/SDL2/SDL_thread.h:
 
 /usr/include/c++/12/initializer_list:
+
+/usr/include/c++/12/bits/shared_ptr.h:
 
 /usr/include/c++/12/bits/stl_bvector.h:
 
@@ -3924,10 +3925,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/c++/12/tuple:
-
-/usr/include/c++/12/bits/functional_hash.h:
-
 /usr/include/stdio.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/vpclmulqdqintrin.h:
@@ -3942,11 +3939,17 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/usr/include/c++/12/bits/atomic_lockfree_defines.h:
+
 /usr/include/SDL2/SDL_misc.h:
 
 /usr/include/c++/12/bits/hash_bytes.h:
 
 /usr/include/c++/12/bits/stl_construct.h:
+
+/usr/include/SDL2/SDL_main.h:
+
+/usr/include/c++/12/pstl/glue_memory_defs.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/serializeintrin.h:
 
@@ -3975,10 +3978,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/c++/12/typeinfo:
 
 /usr/include/SDL2/SDL_error.h:
-
-/usr/include/c++/12/bits/allocated_ptr.h:
-
-/usr/include/c++/12/bits/nested_exception.h:
 
 /usr/include/c++/12/bits/char_traits.h:
 
@@ -4014,10 +4013,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/pthread.h:
 
-/usr/include/c++/12/bits/concept_check.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/mwaitintrin.h:
-
 /usr/include/c++/12/bits/random.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/amxbf16intrin.h:
@@ -4046,12 +4041,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/c++/12/memory:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
 /usr/include/linux/errno.h:
 
 /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.h:
@@ -4067,6 +4056,10 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/c++/12/bits/vector.tcc:
 
 /usr/include/c++/12/ext/string_conversions.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/lwpintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
@@ -4110,6 +4103,10 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/bits/basic_ios.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/12/include/waitpkgintrin.h:
+
+/usr/include/c++/12/pstl/execution_defs.h:
+
 /usr/include/SDL2/SDL_shape.h:
 
 /usr/include/SDL2/SDL_quit.h:
@@ -4124,13 +4121,61 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 
 /usr/include/c++/12/bits/ostream.tcc:
 
+/usr/include/c++/12/bits/functional_hash.h:
+
+/usr/include/c++/12/tuple:
+
 /usr/include/c++/12/tr1/hypergeometric.tcc:
 
 /usr/include/c++/12/cwctype:
 
+/usr/lib/gcc/x86_64-linux-gnu/12/include/uintrintrin.h:
+
+/usr/include/c++/12/bits/unique_ptr.h:
+
 /usr/include/c++/12/tr1/riemann_zeta.tcc:
 
 /usr/include/c++/12/bits/basic_ios.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/c++/12/memory:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/keylockerintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/avx512vlintrin.h:
+
+/usr/include/c++/12/bits/stl_tempbuf.h:
+
+/usr/include/c++/12/bits/stl_raw_storage_iter.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/c++/12/bits/align.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/c++/12/bit:
+
+/usr/include/c++/12/bits/shared_ptr_base.h:
+
+/usr/include/c++/12/bits/nested_exception.h:
+
+/usr/include/c++/12/bits/allocated_ptr.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/avx5124fmapsintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/avx512cdintrin.h:
+
+/usr/include/features-time64.h:
+
+/usr/include/c++/12/ext/aligned_buffer.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/amxint8intrin.h:
+
+/usr/include/c++/12/bits/shared_ptr_atomic.h:
 
 /usr/include/SDL2/SDL.h:
 
@@ -4153,29 +4198,3 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/include/SDL2/SDL_endian.h:
 
 /usr/include/SDL2/SDL_rwops.h:
-
-/usr/include/SDL2/SDL_cpuinfo.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/x86gprintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/bmiintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/cldemoteintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/clzerointrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/pkuintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/enqcmdintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/fxsrintrin.h:
-
-/usr/include/c++/12/bits/std_abs.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/lzcntintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/lwpintrin.h:
