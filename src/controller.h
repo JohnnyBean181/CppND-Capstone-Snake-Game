@@ -3,7 +3,7 @@
 
 #include "snake.h"
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
 class Controller {
  public:

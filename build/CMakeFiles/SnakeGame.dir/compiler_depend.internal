@@ -384,6 +384,7 @@ CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 CMakeFiles/SnakeGame.dir/src/controller.cpp.o
@@ -769,6 +770,7 @@ CMakeFiles/SnakeGame.dir/src/controller.cpp.o
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 CMakeFiles/SnakeGame.dir/src/game.cpp.o
@@ -1163,6 +1165,7 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
@@ -1429,6 +1432,7 @@ CMakeFiles/SnakeGame.dir/src/ltexture.cpp.o
  /usr/include/SDL2/SDL_misc.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /usr/include/c++/12/string
  /usr/include/c++/12/bits/stringfwd.h
  /usr/include/c++/12/bits/memoryfwd.h
@@ -1907,6 +1911,7 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.h
  /usr/include/c++/12/random
@@ -2277,6 +2282,7 @@ CMakeFiles/SnakeGame.dir/src/particle.cpp.o
  /usr/include/SDL2/SDL_misc.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o
@@ -2638,10 +2644,11 @@ CMakeFiles/SnakeGame.dir/src/renderer.cpp.o
  /usr/include/SDL2/SDL_version.h
  /usr/include/SDL2/SDL_locale.h
  /usr/include/SDL2/SDL_misc.h
+ /usr/include/SDL2/SDL_ttf.h
+ /usr/include/SDL2/SDL.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/particle.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h
  /usr/include/SDL2/SDL_image.h
- /usr/include/SDL2/SDL.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/snake.h
  /usr/include/c++/12/memory
@@ -2928,6 +2935,7 @@ CMakeFiles/SnakeGame.dir/src/resource.cpp.o
  /usr/include/SDL2/SDL_misc.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /usr/include/c++/12/string
  /usr/include/c++/12/bits/stringfwd.h
  /usr/include/c++/12/bits/memoryfwd.h
@@ -3405,5 +3413,6 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h
  /usr/include/SDL2/SDL_image.h
  /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL_ttf.h
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 

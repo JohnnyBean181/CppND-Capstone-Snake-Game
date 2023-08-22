@@ -5,3 +5,6 @@ LTexture gRedTexture;
 LTexture gGreenTexture;
 LTexture gBlueTexture;
 LTexture gShimmerTexture;
+
+//Globally used font
+LTexture gTextTexture;

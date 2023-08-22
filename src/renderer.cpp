@@ -31,6 +31,12 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
 
+  //Initialize SDL_ttf
+  if( TTF_Init() == -1 )
+  {
+    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+  }
+
   // load image to generate particles.
   LoadImage();
 }
@@ -74,6 +80,24 @@ bool Renderer::LoadImage() {
 	gBlueTexture.setAlpha( 192 );
 	gShimmerTexture.setAlpha( 192 );
 
+	//Open the font
+	gFont = TTF_OpenFont( "lazy.ttf", 28 );
+	if( gFont == NULL )
+	{
+		printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+		success = false;
+	}
+	else
+	{
+		//Render text
+		SDL_Color textColor = { 0, 0, 0 };
+		if( !gTextTexture.loadFromRenderedText( gFont, sdl_renderer, "The quick brown fox jumps over the lazy dog", textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+	}
+
 	return success;
 }
 
@@ -81,12 +105,17 @@ Renderer::~Renderer() {
   // release loaded image
   UnloadImage();
 
+	//Free global font
+	TTF_CloseFont( gFont );
+	gFont = NULL;
+
   SDL_DestroyRenderer( sdl_renderer );
   SDL_DestroyWindow(sdl_window);
   sdl_window = NULL;
   sdl_renderer = NULL;
 
-  //Quit SDL subsystems
+	//Quit SDL subsystems
+	TTF_Quit();
   IMG_Quit();
   SDL_Quit();
 }
@@ -97,6 +126,9 @@ void Renderer::UnloadImage() {
 	gGreenTexture.free();
 	gBlueTexture.free();
 	gShimmerTexture.free();
+
+  //Free loaded images
+	gTextTexture.free();
 }
 
 

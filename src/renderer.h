@@ -4,7 +4,8 @@
 #include <vector>
 #include <iostream>
 #include <string>
-#include "SDL.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_ttf.h"
 #include "particle.h"
 #include "snake.h"
 #include "resource.h"
@@ -15,6 +16,8 @@ extern LTexture gRedTexture;
 extern LTexture gGreenTexture;
 extern LTexture gBlueTexture;
 extern LTexture gShimmerTexture;
+
+extern LTexture gTextTexture;
 
 class Renderer {
  public:
@@ -28,6 +31,7 @@ class Renderer {
  private:
   SDL_Window *sdl_window;
   SDL_Renderer *sdl_renderer;
+  TTF_Font* gFont;
   bool LoadImage();
   void UnloadImage();
 

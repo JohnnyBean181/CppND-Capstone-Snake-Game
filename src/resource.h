@@ -9,6 +9,9 @@ extern LTexture gGreenTexture;
 extern LTexture gBlueTexture;
 extern LTexture gShimmerTexture;
 
+//Rendered texture
+extern LTexture gTextTexture;
+
 //Particle count
 static int const TOTAL_PARTICLES = 20;
 static int const kScreenWidth = 640;

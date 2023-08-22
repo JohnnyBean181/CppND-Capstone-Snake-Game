@@ -383,6 +383,7 @@ CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o: /home/johnnybean/Documents/UDacity
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 CMakeFiles/SnakeGame.dir/src/controller.cpp.o: /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/controller.cpp \
@@ -767,6 +768,7 @@ CMakeFiles/SnakeGame.dir/src/controller.cpp.o: /home/johnnybean/Documents/UDacit
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 CMakeFiles/SnakeGame.dir/src/game.cpp.o: /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.cpp \
@@ -1160,6 +1162,7 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o: /home/johnnybean/Documents/UDacity/C++/
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
@@ -1425,6 +1428,7 @@ CMakeFiles/SnakeGame.dir/src/ltexture.cpp.o: /home/johnnybean/Documents/UDacity/
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /usr/include/c++/12/string \
   /usr/include/c++/12/bits/stringfwd.h \
   /usr/include/c++/12/bits/memoryfwd.h \
@@ -1902,6 +1906,7 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: /home/johnnybean/Documents/UDacity/C++/
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.h \
   /usr/include/c++/12/random \
@@ -2271,6 +2276,7 @@ CMakeFiles/SnakeGame.dir/src/particle.cpp.o: /home/johnnybean/Documents/UDacity/
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.cpp \
@@ -2631,10 +2637,11 @@ CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: /home/johnnybean/Documents/UDacity/
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
+  /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/particle.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
   /usr/include/SDL2/SDL_image.h \
-  /usr/include/SDL2/SDL.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/snake.h \
   /usr/include/c++/12/memory \
@@ -2920,6 +2927,7 @@ CMakeFiles/SnakeGame.dir/src/resource.cpp.o: /home/johnnybean/Documents/UDacity/
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /usr/include/c++/12/string \
   /usr/include/c++/12/bits/stringfwd.h \
   /usr/include/c++/12/bits/memoryfwd.h \
@@ -3396,6 +3404,7 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
+  /usr/include/SDL2/SDL_ttf.h \
   /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
 
 
@@ -4186,6 +4195,8 @@ CMakeFiles/SnakeGame.dir/src/snake.cpp.o: /home/johnnybean/Documents/UDacity/C++
 /usr/lib/gcc/x86_64-linux-gnu/12/include/avx512vlbwintrin.h:
 
 /usr/include/SDL2/close_code.h:
+
+/usr/include/SDL2/SDL_ttf.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/avx512ifmavlintrin.h:
 

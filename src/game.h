@@ -4,7 +4,7 @@
 #include <random>
 #include <memory>
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"

@@ -313,4 +313,5 @@ CMakeFiles/SnakeGame.dir/src/autosnake.cpp.o: \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/particle.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/ltexture.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_ttf.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h
