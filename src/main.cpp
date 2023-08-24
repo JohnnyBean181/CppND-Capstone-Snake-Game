@@ -1,7 +1,9 @@
 #include <iostream>
 #include "controller.h"
 #include "game.h"
+#include "game2p.h"
 #include "renderer.h"
+#include "menu.h"
 
 
 int main() {
@@ -14,10 +16,44 @@ int main() {
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
-  Game game(kGridWidth, kGridHeight);
-  game.Run(controller, renderer, kMsPerFrame);
-  std::cout << "Game has terminated successfully!\n";
-  std::cout << "Score: " << game.GetScore() << "\n";
-  std::cout << "Size: " << game.GetSize() << "\n";
+  Menu menu;
+  bool running = true;
+
+  while (running) {
+    menu.Run(controller, renderer);
+    if (menu.Quit()){
+      break;
+    }
+    switch(menu.GetSelectId()) {
+      case 0:
+        {
+          int lives = 3;
+          while (lives>0) {
+            Game game(kGridWidth, kGridHeight);
+            game.Run(controller, renderer, kMsPerFrame);
+            std::cout << "Good Game!\n";
+            std::cout << "Score: " << game.GetScore() << "\n";
+            std::cout << "Size: " << game.GetSize() << "\n";
+            lives--;
+            std::cout << lives << " lives left!\n";
+          }
+          break;
+        }
+      case 1:
+        {
+          Game2P game2p(kGridWidth, kGridHeight);
+          
+          std::string winner = game2p.Run(controller, renderer, kMsPerFrame);
+          std::cout << "Winner is " << winner << "!" << std::endl;
+        }
+        break;
+      case 2:
+        break;
+      case 3:
+        running = false;
+        break;
+    }
+    menu.Reset();
+  }
   return 0;
 }

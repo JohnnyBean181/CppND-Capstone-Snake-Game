@@ -10,7 +10,10 @@ extern LTexture gBlueTexture;
 extern LTexture gShimmerTexture;
 
 //Rendered texture
-extern LTexture gTextTexture;
+extern LTexture gTextTexture_1p;
+extern LTexture gTextTexture_2p;
+extern LTexture gTextTexture_pvc;
+extern LTexture gTextTexture_exit;
 
 //Particle count
 static int const TOTAL_PARTICLES = 20;

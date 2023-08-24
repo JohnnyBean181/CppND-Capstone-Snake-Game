@@ -2,7 +2,7 @@
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : _snake(std::make_unique<Snake>(grid_width, grid_height)),
-      _robotSnake(std::make_unique<AutoSnake>(grid_width, grid_height)),
+      //_robotSnake(std::make_unique<AutoSnake>(grid_width, grid_height)),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1)) {
@@ -25,7 +25,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, _snake.get());
     Update();
-    renderer.Render(_snake.get(), _robotSnake.get(), food);
+    renderer.Render(_snake.get(), food);
 
     frame_end = SDL_GetTicks();
 
@@ -46,6 +46,11 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // achieve the correct frame rate.
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
+    }
+
+    if (!_snake->alive) {
+      running = false;
+      SDL_Delay(2000);
     }
   }
 }
@@ -72,11 +77,11 @@ void Game::Update() {
   // robot snake will walk around the panel.
   // but robot snake neither eat food
   // nor run into normal snake.
-  _robotSnake->Redirect();
+  // _robotSnake->Redirect();
 
   _snake->Update();
   // also update robot snake
-  _robotSnake->Update();
+  //_robotSnake->Update();
 
   int new_x = static_cast<int>(_snake->head_x);
   int new_y = static_cast<int>(_snake->head_y);

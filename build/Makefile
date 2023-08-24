@@ -201,6 +201,30 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/game2p.o: src/game2p.cpp.o
+.PHONY : src/game2p.o
+
+# target to build an object file
+src/game2p.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game2p.cpp.o
+.PHONY : src/game2p.cpp.o
+
+src/game2p.i: src/game2p.cpp.i
+.PHONY : src/game2p.i
+
+# target to preprocess a source file
+src/game2p.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game2p.cpp.i
+.PHONY : src/game2p.cpp.i
+
+src/game2p.s: src/game2p.cpp.s
+.PHONY : src/game2p.s
+
+# target to generate assembly for a file
+src/game2p.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game2p.cpp.s
+.PHONY : src/game2p.cpp.s
+
 src/ltexture.o: src/ltexture.cpp.o
 .PHONY : src/ltexture.o
 
@@ -248,6 +272,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/menu.o: src/menu.cpp.o
+.PHONY : src/menu.o
+
+# target to build an object file
+src/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
+
+src/menu.i: src/menu.cpp.i
+.PHONY : src/menu.i
+
+# target to preprocess a source file
+src/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
+
+src/menu.s: src/menu.cpp.s
+.PHONY : src/menu.s
+
+# target to generate assembly for a file
+src/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
 
 src/particle.o: src/particle.cpp.o
 .PHONY : src/particle.o
@@ -363,12 +411,18 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/game2p.o"
+	@echo "... src/game2p.i"
+	@echo "... src/game2p.s"
 	@echo "... src/ltexture.o"
 	@echo "... src/ltexture.i"
 	@echo "... src/ltexture.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
 	@echo "... src/particle.o"
 	@echo "... src/particle.i"
 	@echo "... src/particle.s"

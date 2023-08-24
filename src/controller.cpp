@@ -37,3 +37,37 @@ void Controller::HandleInput(bool &running, Snake *snake) const {
     }
   }
 }
+
+void Controller::HandleMenuInput(bool &running, bool &quit, int &menu_selected, int &menu_last_selected) const {
+  SDL_Event e;
+  while (SDL_PollEvent(&e)) {
+    if (e.type == SDL_QUIT) {
+      running = false;
+      quit = true;
+    } else if (e.type == SDL_KEYDOWN) {
+      switch (e.key.keysym.sym) {
+        case SDLK_UP:
+          if (menu_selected == 0) {
+            break;
+          } else {
+            menu_last_selected = menu_selected;
+            menu_selected--;
+            break;
+          }
+          break;
+        case SDLK_DOWN:
+          if (menu_selected == 3) {
+            break;
+          } else {
+            menu_last_selected = menu_selected;
+            menu_selected++;
+            break;
+          }
+          break;
+        case SDLK_RETURN:
+          running = false;
+          break;
+      }
+    }
+  }
+}

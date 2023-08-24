@@ -17,7 +17,10 @@ extern LTexture gGreenTexture;
 extern LTexture gBlueTexture;
 extern LTexture gShimmerTexture;
 
-extern LTexture gTextTexture;
+extern LTexture gTextTexture_1p;
+extern LTexture gTextTexture_2p;
+extern LTexture gTextTexture_pvc;
+extern LTexture gTextTexture_exit;
 
 class Renderer {
  public:
@@ -25,7 +28,8 @@ class Renderer {
            const std::size_t grid_width, const std::size_t grid_height);
   ~Renderer();
 
-  void Render(Snake* snake, AutoSnake* autoSnake, SDL_Point const &food);
+  void Render(Snake* snake, SDL_Point const &food);
+  void RenderMainMenu(int &menu_selected, int &menu_last_selected);
   void UpdateWindowTitle(int score, int fps);
 
  private:
@@ -34,6 +38,7 @@ class Renderer {
   TTF_Font* gFont;
   bool LoadImage();
   void UnloadImage();
+  void DrawText(int id, int flag);
 
   const std::size_t screen_width;
   const std::size_t screen_height;

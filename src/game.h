@@ -9,7 +9,7 @@
 #include "renderer.h"
 #include "snake.h"
 #include "resource.h"
-#include "autosnake.h"
+// #include "autosnake.h"
 
 class Game {
  public:
@@ -19,10 +19,10 @@ class Game {
   int GetScore() const;
   int GetSize() const;
 
- private:
+ protected:
   // Snake snake;
   std::unique_ptr<Snake> _snake;
-  std::unique_ptr<AutoSnake> _robotSnake;
+  // std::unique_ptr<AutoSnake> _robotSnake;
   SDL_Point food;
 
   std::random_device dev;

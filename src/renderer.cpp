@@ -89,9 +89,30 @@ bool Renderer::LoadImage() {
 	}
 	else
 	{
-		//Render text
-		SDL_Color textColor = { 0, 0, 0 };
-		if( !gTextTexture.loadFromRenderedText( gFont, sdl_renderer, "The quick brown fox jumps over the lazy dog", textColor ) )
+		//Render text 1P
+		SDL_Color textColor = { 0xff, 0xff, 0xff };
+		if( !gTextTexture_1p.loadFromRenderedText( gFont, sdl_renderer, "Start Game - 1P", textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		//Render text PvP
+		if( !gTextTexture_2p.loadFromRenderedText( gFont, sdl_renderer, "Start Game - PvP", textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+    //Render text PvC
+		if( !gTextTexture_pvc.loadFromRenderedText( gFont, sdl_renderer, "Start Game - PvC", textColor ) )
+		{
+			printf( "Failed to render text texture!\n" );
+			success = false;
+		}
+
+		//Render text Exit
+		if( !gTextTexture_exit.loadFromRenderedText( gFont, sdl_renderer, "Exit", textColor ) )
 		{
 			printf( "Failed to render text texture!\n" );
 			success = false;
@@ -128,11 +149,33 @@ void Renderer::UnloadImage() {
 	gShimmerTexture.free();
 
   //Free loaded images
-	gTextTexture.free();
+	gTextTexture_1p.free();
 }
 
+void Renderer::DrawText(int id, int flag) {
+  SDL_Color textColor;
+  if (flag) {
+    textColor = { 0x00, 0xff, 0xff };
+  } else {
+    textColor = { 0xff, 0xff, 0xff };
+  }
+  switch (id){
+    case 0: 
+      gTextTexture_1p.loadFromRenderedText( gFont, sdl_renderer, "Start Game - 1P", textColor );
+      break;
+    case 1: 
+      gTextTexture_2p.loadFromRenderedText( gFont, sdl_renderer, "Start Game - PvP", textColor );
+      break;
+    case 2: 
+      gTextTexture_pvc.loadFromRenderedText( gFont, sdl_renderer, "Start Game - PvC", textColor );
+      break;
+    case 3: 
+      gTextTexture_exit.loadFromRenderedText( gFont, sdl_renderer, "Exit", textColor );
+      break;
+  }
+}
 
-void Renderer::Render(Snake* snake, AutoSnake* autoSnake, SDL_Point const &food) {
+void Renderer::Render(Snake* snake, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -154,14 +197,14 @@ void Renderer::Render(Snake* snake, AutoSnake* autoSnake, SDL_Point const &food)
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
-
+  /*
   // Render autoSnake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
   for (SDL_Point const &point : autoSnake->body) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
-  }
+  }*/
 
   // Render snake's head
   block.x = static_cast<int>(snake->head_x) * block.w;
@@ -173,6 +216,7 @@ void Renderer::Render(Snake* snake, AutoSnake* autoSnake, SDL_Point const &food)
   }
   SDL_RenderFillRect(sdl_renderer, &block);
 
+  /*
   // Render autoSnake's head
   block.x = static_cast<int>(autoSnake->head_x) * block.w;
   block.y = static_cast<int>(autoSnake->head_y) * block.h;
@@ -182,12 +226,42 @@ void Renderer::Render(Snake* snake, AutoSnake* autoSnake, SDL_Point const &food)
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
   SDL_RenderFillRect(sdl_renderer, &block);
+  */
 
   // Render snake's particles
   for( int i = 0; i < TOTAL_PARTICLES; ++i )
   {
       snake->particles[ i ]->render(sdl_renderer);
   }
+
+  // Update Screen
+  SDL_RenderPresent(sdl_renderer);
+}
+
+void Renderer::RenderMainMenu(int &menu_selected, int &menu_last_selected) {
+  SDL_Rect block;
+  block.w = screen_width / grid_width;
+  block.h = screen_height / grid_height;
+
+  // Clear screen
+  SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
+  SDL_RenderClear(sdl_renderer);
+
+  for(int i=0; i<4; i++) {
+    if (menu_last_selected == i) {
+      DrawText(i, 0);
+      menu_last_selected = -1;
+    }
+    if (menu_selected == i) {
+      DrawText(i, 1);
+    } 
+  }
+
+  // Render current frame
+  gTextTexture_1p.render(sdl_renderer, 200, 180);
+  gTextTexture_2p.render(sdl_renderer, 200, 230);
+  gTextTexture_pvc.render(sdl_renderer, 200, 280);
+  gTextTexture_exit.render(sdl_renderer, 200, 330);
 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);

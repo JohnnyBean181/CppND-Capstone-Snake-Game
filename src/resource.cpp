@@ -7,4 +7,7 @@ LTexture gBlueTexture;
 LTexture gShimmerTexture;
 
 //Globally used font
-LTexture gTextTexture;
+LTexture gTextTexture_1p;
+LTexture gTextTexture_2p;
+LTexture gTextTexture_pvc;
+LTexture gTextTexture_exit;

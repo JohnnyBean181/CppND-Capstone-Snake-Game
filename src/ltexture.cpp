@@ -124,7 +124,7 @@ void LTexture::setBlendMode( SDL_BlendMode blending )
 void LTexture::render( SDL_Renderer *sdl_renderer, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip )
 {
 	//Set rendering space and render to screen
-	SDL_Rect renderQuad = { x, y, mHeight, mWidth };
+	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
 
 	//Set clip rendering dimensions
 	if( clip != NULL )
