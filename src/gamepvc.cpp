@@ -1,6 +1,6 @@
-#include "game2p.h"
+#include "gamepvc.h"
 
-Game2P::Game2P(std::size_t grid_width, std::size_t grid_height)
+GamePvC::GamePvC(std::size_t grid_width, std::size_t grid_height)
     : Game(grid_width, grid_height),
     _snake_2nd(std::make_unique<Snake>(grid_width, grid_height)){
     _snake->SetSolo(false);
@@ -11,7 +11,7 @@ Game2P::Game2P(std::size_t grid_width, std::size_t grid_height)
 
 }
 
-std::string Game2P::Run(Controller const &controller, Renderer &renderer,
+std::string GamePvC::Run(Controller const &controller, Renderer &renderer,
     std::size_t target_frame_duration){
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
@@ -65,7 +65,7 @@ std::string Game2P::Run(Controller const &controller, Renderer &renderer,
   }
 }
 
-void Game2P::Update() {
+void GamePvC::Update() {
   if (!_snake->alive || !_snake_2nd->alive) return;
 
   _snake->Update();
@@ -100,4 +100,4 @@ void Game2P::Update() {
   _snake_2nd->CrossDetection(_snake.get());
 }
 
-int Game2P::GetScore2() const { return score2; }
+int GamePvC::GetScore2() const { return score2; }

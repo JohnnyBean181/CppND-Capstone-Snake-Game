@@ -225,6 +225,30 @@ src/game2p.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game2p.cpp.s
 .PHONY : src/game2p.cpp.s
 
+src/gamepvc.o: src/gamepvc.cpp.o
+.PHONY : src/gamepvc.o
+
+# target to build an object file
+src/gamepvc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/gamepvc.cpp.o
+.PHONY : src/gamepvc.cpp.o
+
+src/gamepvc.i: src/gamepvc.cpp.i
+.PHONY : src/gamepvc.i
+
+# target to preprocess a source file
+src/gamepvc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/gamepvc.cpp.i
+.PHONY : src/gamepvc.cpp.i
+
+src/gamepvc.s: src/gamepvc.cpp.s
+.PHONY : src/gamepvc.s
+
+# target to generate assembly for a file
+src/gamepvc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/gamepvc.cpp.s
+.PHONY : src/gamepvc.cpp.s
+
 src/ltexture.o: src/ltexture.cpp.o
 .PHONY : src/ltexture.o
 
@@ -414,6 +438,9 @@ help:
 	@echo "... src/game2p.o"
 	@echo "... src/game2p.i"
 	@echo "... src/game2p.s"
+	@echo "... src/gamepvc.o"
+	@echo "... src/gamepvc.i"
+	@echo "... src/gamepvc.s"
 	@echo "... src/ltexture.o"
 	@echo "... src/ltexture.i"
 	@echo "... src/ltexture.s"

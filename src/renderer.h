@@ -29,6 +29,7 @@ class Renderer {
   ~Renderer();
 
   void Render(Snake* snake, SDL_Point const &food);
+  void Render2P(Snake* snake1, Snake* snake2, SDL_Point const &food);
   void RenderMainMenu(int &menu_selected, int &menu_last_selected);
   void UpdateWindowTitle(int score, int fps);
 

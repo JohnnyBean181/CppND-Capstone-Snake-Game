@@ -11,7 +11,7 @@ public:
         : Snake(grid_width, grid_height){
         // identify itself as robot snake.
         // so render knows not to draw particles.
-        manual = false;
+        solo = false;
     }
 
     // by calling this func,

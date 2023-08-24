@@ -43,7 +43,7 @@ void Snake::Update() {
   }
 
   // Update the praticles which are used for head decoration.
-  if (manual) {
+  if (solo) {
     UpdateParticles();
   }
 }
@@ -136,4 +136,27 @@ int Snake::GetGridWidth() {
 
 int Snake::GetGridHeight() {
   return grid_height;
+}
+
+bool Snake::GetSolo() {
+  return solo;
+}
+
+void Snake::SetSolo(bool is_solo) {
+  solo = is_solo;
+}
+
+void Snake::SetDirection(Direction drct) {
+  direction = drct;
+}
+
+void Snake::CrossDetection(Snake * snake2) {
+
+  // Check if 2 snakes have crossed.
+  int int_head_x = static_cast<int>(head_x);
+  int int_head_y = static_cast<int>(head_y);
+
+  if (snake2->SnakeCell(int_head_x, int_head_y) ) {
+    alive = false;
+  }
 }

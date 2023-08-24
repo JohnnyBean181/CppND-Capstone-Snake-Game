@@ -18,7 +18,7 @@ class Snake {
         grid_height(grid_height),
         head_x(grid_width / 2),
         head_y(grid_height / 2){
-          if (manual) {
+          if (solo) {
             // decorate snake's head with fancy particles 
             Load_Particles();
           }
@@ -30,6 +30,10 @@ class Snake {
 
   void GrowBody();
   bool SnakeCell(int x, int y);
+  bool GetSolo();
+  void SetSolo(bool is_solo);
+  void SetDirection(Direction drct);
+  void CrossDetection(Snake * snake2);
 
   Direction direction = Direction::kUp;
 
@@ -39,8 +43,8 @@ class Snake {
   float head_x;
   float head_y;
   std::vector<SDL_Point> body;
-  //Flag to identify if it's robot snake.
-  bool manual{true};
+  //Flag to identify if this is 1P game.
+  bool solo{true};
 
   //The particles
 	std::unique_ptr<Particle> particles[ TOTAL_PARTICLES ];

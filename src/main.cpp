@@ -2,6 +2,7 @@
 #include "controller.h"
 #include "game.h"
 #include "game2p.h"
+#include "gamepvc.h"
 #include "renderer.h"
 #include "menu.h"
 
@@ -48,6 +49,12 @@ int main() {
         }
         break;
       case 2:
+        {
+          GamePvC game_pvc(kGridWidth, kGridHeight);
+          
+          std::string winner = game_pvc.Run(controller, renderer, kMsPerFrame);
+          std::cout << "Winner is " << winner << "!" << std::endl;
+        }
         break;
       case 3:
         running = false;
