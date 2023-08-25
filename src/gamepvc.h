@@ -24,7 +24,7 @@ public:
 
 private:
     void Update();
-    std::unique_ptr<Snake> _snake_2nd;
+    std::unique_ptr<AutoSnake> _snake_robot;
     // score of the 2nd snake
     int score2{0};
 };

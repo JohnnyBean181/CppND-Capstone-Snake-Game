@@ -156,7 +156,9 @@ void Snake::CrossDetection(Snake * snake2) {
   int int_head_x = static_cast<int>(head_x);
   int int_head_y = static_cast<int>(head_y);
 
-  if (snake2->SnakeCell(int_head_x, int_head_y) ) {
-    alive = false;
+  for (auto const &item : snake2->body) {
+    if (int_head_x == item.x && int_head_y == item.y) {
+      alive = false;
+    }
   }
 }

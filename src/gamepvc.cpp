@@ -2,12 +2,9 @@
 
 GamePvC::GamePvC(std::size_t grid_width, std::size_t grid_height)
     : Game(grid_width, grid_height),
-    _snake_2nd(std::make_unique<Snake>(grid_width, grid_height)){
+    _snake_robot(std::make_unique<AutoSnake>(grid_width, grid_height)){
     _snake->SetSolo(false);
-    _snake_2nd->SetSolo(false);
-
-    Snake::Direction direction = Snake::Direction::kRight;
-    _snake_2nd->SetDirection(direction);
+    _snake_robot->SetSolo(false);
 
 }
 
@@ -24,9 +21,10 @@ std::string GamePvC::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.Handle2PInput(running, _snake.get(), _snake_2nd.get());
+    controller.HandleInput(running, _snake.get());
+    _snake_robot->Redirect(food);
     Update();
-    renderer.Render2P(_snake.get(), _snake_2nd.get(), food);
+    renderer.Render2P(_snake.get(), _snake_robot.get(), food);
 
     frame_end = SDL_GetTicks();
 
@@ -49,28 +47,28 @@ std::string GamePvC::Run(Controller const &controller, Renderer &renderer,
       SDL_Delay(target_frame_duration - frame_duration);
     }
 
-    if (!_snake->alive or !_snake_2nd->alive) {
+    if (!_snake->alive or !_snake_robot->alive) {
       running = false;
       SDL_Delay(2000);
     }
   }
 
   if (GetScore() > GetScore2()) {
-    return "Player 1";
+    return "Player";
   } else 
   if (GetScore() < GetScore2()){
-    return "Player 2";
+    return "Computer";
   } else {
     return "Nobody";
   }
 }
 
 void GamePvC::Update() {
-  if (!_snake->alive || !_snake_2nd->alive) return;
+  if (!_snake->alive || !_snake_robot->alive) return;
 
   _snake->Update();
-  // also update snake2
-  _snake_2nd->Update();
+  // also update robot snake
+  _snake_robot->Update();
 
   int new_x = static_cast<int>(_snake->head_x);
   int new_y = static_cast<int>(_snake->head_y);
@@ -84,20 +82,20 @@ void GamePvC::Update() {
     _snake->speed += 0.02;
   }
 
-  int new_x_2 = static_cast<int>(_snake_2nd->head_x);
-  int new_y_2 = static_cast<int>(_snake_2nd->head_y);
+  int new_x_2 = static_cast<int>(_snake_robot->head_x);
+  int new_y_2 = static_cast<int>(_snake_robot->head_y);
 
   // Check if there's food over here
   if (food.x == new_x_2 && food.y == new_y_2) {
     score2++;
     PlaceFood();
     // Grow snake and increase speed.
-    _snake_2nd->GrowBody();
-    _snake_2nd->speed += 0.02;
+    _snake_robot->GrowBody();
+    _snake_robot->speed += 0.02;
   }
 
-  _snake->CrossDetection(_snake_2nd.get());
-  _snake_2nd->CrossDetection(_snake.get());
+  _snake->CrossDetection(_snake_robot.get());
+  _snake_robot->CrossDetection(_snake.get());
 }
 
 int GamePvC::GetScore2() const { return score2; }

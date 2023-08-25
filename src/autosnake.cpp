@@ -1,6 +1,6 @@
 #include "autosnake.h"
 
-void AutoSnake::Redirect() {
+void AutoSnake::Redirect(SDL_Point food) {
   // locate block
   SDL_Rect block;
   block.w = kScreenWidth / GetGridWidth();
@@ -9,31 +9,21 @@ void AutoSnake::Redirect() {
   block.x = static_cast<int>(head_x) * block.w;
   block.y = static_cast<int>(head_y) * block.h;
 
-  // if the snake is close to the board.
-  if (block.y < kScreenHeight/10*9 && block.x < kScreenWidth/10) {
-    if (direction!=Direction::kDown) {
+  std::cout << "head_point: " << static_cast<int>(head_x) << ":" << static_cast<int>(head_y) << std::endl;
+  std::cout << "food_point: " << food.x << ":" << food.x << std::endl;
+  std::cout << "begining direction: " << (int)direction << std::endl;
+
+  if (food.x != static_cast<int>(head_x)) {
+    if (direction!=Direction::kLeft && direction!=Direction::kRight){
       TurnLeft();
     }
-    return;
   }
-  if (block.y > kScreenHeight/10*9 && block.x < kScreenWidth/10*9) {
-    if (direction!=Direction::kRight) {
+  else if (food.y != static_cast<int>(head_y)) {
+    if (direction!=Direction::kUp && direction!=Direction::kDown) {
       TurnLeft();
     }
-    return;
   }
-  if (block.y > kScreenHeight/10 && block.x > kScreenWidth/10*9) {
-    if (direction!=Direction::kUp) {
-      TurnLeft();
-    }
-    return;
-  }
-  if (block.y < kScreenHeight/10 && block.x > kScreenWidth/10) {
-    if (direction!=Direction::kLeft) {
-      TurnLeft();
-    }
-    return;
-  }
+  std::cout << "ending direction: " << (int)direction << std::endl;
 }
 
 void AutoSnake::TurnLeft () {

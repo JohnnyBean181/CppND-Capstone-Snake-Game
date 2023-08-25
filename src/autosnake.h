@@ -8,15 +8,11 @@ class AutoSnake : public Snake {
 public:
 
     AutoSnake(int grid_width, int grid_height)
-        : Snake(grid_width, grid_height){
-        // identify itself as robot snake.
-        // so render knows not to draw particles.
-        solo = false;
-    }
+        : Snake(grid_width, grid_height){};
 
     // by calling this func,
     // auto snake knows how to walk around the panel.
-    void Redirect();
+    void Redirect(SDL_Point food);
 
     // turn the direction to the left
     void TurnLeft();
