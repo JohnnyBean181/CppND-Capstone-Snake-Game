@@ -24,7 +24,7 @@ std::string GamePvC::Run(Controller const &controller, Renderer &renderer,
     controller.HandleInput(running, _snake.get());
     _snake_robot->Redirect(food);
     Update();
-    renderer.Render2P(_snake.get(), _snake_robot.get(), food);
+    renderer.Render(_snake.get(), _snake_robot.get(), food);
 
     frame_end = SDL_GetTicks();
 

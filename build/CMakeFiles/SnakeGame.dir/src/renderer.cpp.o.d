@@ -313,4 +313,5 @@ CMakeFiles/SnakeGame.dir/src/renderer.cpp.o: \
  /usr/include/c++/12/backward/auto_ptr.h \
  /usr/include/c++/12/pstl/glue_memory_defs.h \
  /usr/include/c++/12/pstl/execution_defs.h \
- /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/food.h

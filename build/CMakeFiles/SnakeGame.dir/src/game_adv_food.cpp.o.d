@@ -1,7 +1,7 @@
-CMakeFiles/SnakeGame.dir/src/menu.cpp.o: \
- /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/menu.cpp \
+CMakeFiles/SnakeGame.dir/src/game_adv_food.cpp.o: \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game_adv_food.cpp \
  /usr/include/stdc-predef.h \
- /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/menu.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game_adv_food.h \
  /usr/include/c++/12/random /usr/include/c++/12/cmath \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -315,7 +315,7 @@ CMakeFiles/SnakeGame.dir/src/menu.cpp.o: \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_thread.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/controller.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/snake.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/particle.h \
@@ -325,4 +325,6 @@ CMakeFiles/SnakeGame.dir/src/menu.cpp.o: \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h \
- /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/food.h
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/food.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/multithreads.h

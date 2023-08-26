@@ -1,0 +1,100 @@
+#include "multithreads.h"
+#include "game_adv_food.h"
+
+int Producer( void *data )
+{
+	// printf( "\nProducer started...\n" );
+
+	//Seed thread random
+	// srand( SDL_GetTicks() );
+    GameAdvFood* game = (GameAdvFood *)data;
+
+    //Produce
+    while(game->running) {
+        //Wait
+		SDL_Delay( 100 );
+
+        //Produce
+        Produce((GameAdvFood *)data);
+    }
+
+	// printf( "Producer finished!\n" );
+
+    return 0;
+}
+
+
+int Consumer( void *data )
+{
+	// printf( "\nConsumer started...\n" );
+
+	//Seed thread random
+	// srand( SDL_GetTicks() );
+    GameAdvFood* game = (GameAdvFood *)data;
+
+    while(game->running) {
+        //Wait
+		SDL_Delay( 100 );
+
+        //Consume
+        Consume((GameAdvFood *)data);
+    }
+	
+	// printf( "Consumer finished!\n" );
+
+	return 0;
+}
+
+void Produce(GameAdvFood* game)
+{
+	//Lock
+	SDL_LockMutex( gBufferLock );
+	
+	//If the food is available
+	if( game->IsFoodAvailable() )
+	{
+		//Wait for buffer to be cleared
+		//printf( "\nProducer encountered full buffer, waiting for consumer to empty buffer...\n" );
+		SDL_CondWait( gCanProduce, gBufferLock );
+	}
+
+	//Fill and show buffer
+	game->MakeFood();
+	//printf( "\nProduced %d\n", gData );
+    //printf( "\nFood placed! \n" );
+	
+	//Unlock
+	SDL_UnlockMutex( gBufferLock );
+	
+	//Signal consumer
+	SDL_CondSignal( gCanConsume );
+}
+
+void Consume(GameAdvFood* game)
+{
+	//Lock
+	SDL_LockMutex( gBufferLock );
+	
+	//If the buffer is empty
+	if( !game->IsFoodAvailable() )
+	{
+		//Wait for buffer to be filled
+		//printf( "\nConsumer encountered empty buffer, waiting for producer to fill buffer...\n" );
+		SDL_CondWait( gCanConsume, gBufferLock );
+	}
+
+	//Show and empty buffer
+    Uint32 current_timestamp = SDL_GetTicks();
+    bool decayed = game->IsFoodDecayed(current_timestamp);
+    if (decayed) {
+        game->CleanFood();
+
+        //Signal producer
+	    SDL_CondSignal( gCanProduce );
+    }
+
+	//printf( "\nConsumed \n" );
+	
+	//Unlock
+	SDL_UnlockMutex( gBufferLock );
+}

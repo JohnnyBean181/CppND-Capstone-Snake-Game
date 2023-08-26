@@ -20,4 +20,12 @@ static int const TOTAL_PARTICLES = 20;
 static int const kScreenWidth = 640;
 static int const kScreenHeight = 640;
 
+// The protective mutex
+extern SDL_mutex* gBufferLock;
+
+// The conditions
+extern SDL_cond* gCanProduce;
+extern SDL_cond* gCanConsume;
+
+
 #endif

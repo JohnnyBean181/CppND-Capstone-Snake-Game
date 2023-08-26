@@ -34,6 +34,7 @@ class Snake {
   void SetSolo(bool is_solo);
   void SetDirection(Direction drct);
   void CrossDetection(Snake * snake2);
+  void Reverse();
 
   Direction direction = Direction::kUp;
 

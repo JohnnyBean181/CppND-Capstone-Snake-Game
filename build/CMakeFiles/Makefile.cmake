@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeSystem.cmake"
   "/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/cmake/FindSDL2_image.cmake"
+  "/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/cmake/FindSDL2_thread.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2_ttf/sdl2_ttf-config-version.cmake"

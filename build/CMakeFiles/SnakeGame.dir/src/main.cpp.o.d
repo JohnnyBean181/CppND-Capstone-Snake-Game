@@ -323,6 +323,10 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: \
  /usr/include/c++/12/pstl/glue_numeric_defs.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/food.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game2p.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/gamepvc.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game_adv_food.h \
+ /usr/include/SDL2/SDL_thread.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/multithreads.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/menu.h

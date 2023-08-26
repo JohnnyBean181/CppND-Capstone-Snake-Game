@@ -325,4 +325,5 @@ CMakeFiles/SnakeGame.dir/src/gamepvc.cpp.o: \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/food.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/game.h

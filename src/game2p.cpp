@@ -24,9 +24,9 @@ std::string Game2P::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.Handle2PInput(running, _snake.get(), _snake_2nd.get());
+    controller.HandleInput(running, _snake.get(), _snake_2nd.get());
     Update();
-    renderer.Render2P(_snake.get(), _snake_2nd.get(), food);
+    renderer.Render(_snake.get(), _snake_2nd.get(), food);
 
     frame_end = SDL_GetTicks();
 

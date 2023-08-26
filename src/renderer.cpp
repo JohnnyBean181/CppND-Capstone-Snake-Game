@@ -119,6 +119,13 @@ bool Renderer::LoadImage() {
 		}
 	}
 
+  //Create the mutex
+  gBufferLock = SDL_CreateMutex();
+
+  //Create conditions
+  gCanProduce = SDL_CreateCond();
+  gCanConsume = SDL_CreateCond();
+
 	return success;
 }
 
@@ -130,6 +137,17 @@ Renderer::~Renderer() {
 	TTF_CloseFont( gFont );
 	gFont = NULL;
 
+  //Destroy the mutex
+  SDL_DestroyMutex( gBufferLock );
+  gBufferLock = NULL;
+
+  //Destroy conditions
+  SDL_DestroyCond (gCanProduce );
+  SDL_DestroyCond (gCanConsume );
+  gCanProduce = NULL;
+  gCanConsume = NULL;
+
+  //Destroy window
   SDL_DestroyRenderer( sdl_renderer );
   SDL_DestroyWindow(sdl_window);
   sdl_window = NULL;
@@ -197,14 +215,6 @@ void Renderer::Render(Snake* snake, SDL_Point const &food) {
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
-  /*
-  // Render autoSnake's body
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-  for (SDL_Point const &point : autoSnake->body) {
-    block.x = point.x * block.w;
-    block.y = point.y * block.h;
-    SDL_RenderFillRect(sdl_renderer, &block);
-  }*/
 
   // Render snake's head
   block.x = static_cast<int>(snake->head_x) * block.w;
@@ -216,17 +226,54 @@ void Renderer::Render(Snake* snake, SDL_Point const &food) {
   }
   SDL_RenderFillRect(sdl_renderer, &block);
 
-  /*
-  // Render autoSnake's head
-  block.x = static_cast<int>(autoSnake->head_x) * block.w;
-  block.y = static_cast<int>(autoSnake->head_y) * block.h;
-  if (autoSnake->alive) {
-    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x2A, 0x7C, 0xFF);
+  // Render snake's particles
+  if (snake->GetSolo()) {
+    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+    {
+        snake->particles[ i ]->render(sdl_renderer);
+    }
+  }
+
+  // Update Screen
+  SDL_RenderPresent(sdl_renderer);
+}
+
+void Renderer::Render(Snake* snake, Food* food) {
+  SDL_Rect block;
+  block.w = screen_width / grid_width;
+  block.h = screen_height / grid_height;
+
+  // Clear screen
+  SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
+  SDL_RenderClear(sdl_renderer);
+
+  // Render food
+  if (food->IsPoisonous()) {
+    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0xDD, 0x00, 0xFF);
+  } else {
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
+  }
+  block.x = food->GetPosition()->x * block.w;
+  block.y = food->GetPosition()->y * block.h;
+  SDL_RenderFillRect(sdl_renderer, &block);
+
+  // Render snake's body
+  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  for (SDL_Point const &point : snake->body) {
+    block.x = point.x * block.w;
+    block.y = point.y * block.h;
+    SDL_RenderFillRect(sdl_renderer, &block);
+  }
+
+  // Render snake's head
+  block.x = static_cast<int>(snake->head_x) * block.w;
+  block.y = static_cast<int>(snake->head_y) * block.h;
+  if (snake->alive) {
+    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
   } else {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
   SDL_RenderFillRect(sdl_renderer, &block);
-  */
 
   // Render snake's particles
   if (snake->GetSolo()) {
@@ -236,12 +283,11 @@ void Renderer::Render(Snake* snake, SDL_Point const &food) {
     }
   }
 
-
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
 
-void Renderer::Render2P(Snake* snake1, Snake* snake2, SDL_Point const &food) {
+void Renderer::Render(Snake* snake1, Snake* snake2, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;

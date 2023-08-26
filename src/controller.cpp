@@ -38,7 +38,7 @@ void Controller::HandleInput(bool &running, Snake *snake) const {
   }
 }
 
-void Controller::Handle2PInput(bool &running, Snake *snake1, Snake *snake2) const {
+void Controller::HandleInput(bool &running, Snake *snake1, Snake *snake2) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {

@@ -324,4 +324,5 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o: \
  /usr/include/SDL2/SDL_ttf.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/resource.h \
  /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/renderer.h \
- /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/autosnake.h \
+ /home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src/food.h

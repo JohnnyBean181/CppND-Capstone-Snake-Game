@@ -10,6 +10,7 @@
 #include "snake.h"
 #include "resource.h"
 #include "autosnake.h"
+#include "food.h"
 
 //Scene textures
 extern LTexture gRedTexture;
@@ -22,6 +23,10 @@ extern LTexture gTextTexture_2p;
 extern LTexture gTextTexture_pvc;
 extern LTexture gTextTexture_exit;
 
+extern SDL_mutex* gBufferLock;
+extern SDL_cond* gCanProduce;
+extern SDL_cond* gCanConsume;
+
 class Renderer {
  public:
   Renderer(const std::size_t screen_width, const std::size_t screen_height,
@@ -29,7 +34,8 @@ class Renderer {
   ~Renderer();
 
   void Render(Snake* snake, SDL_Point const &food);
-  void Render2P(Snake* snake1, Snake* snake2, SDL_Point const &food);
+  void Render(Snake* snake, Food* food);
+  void Render(Snake* snake1, Snake* snake2, SDL_Point const &food);
   void RenderMainMenu(int &menu_selected, int &menu_last_selected);
   void UpdateWindowTitle(int score, int fps);
 

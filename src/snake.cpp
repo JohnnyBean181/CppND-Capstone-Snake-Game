@@ -162,3 +162,12 @@ void Snake::CrossDetection(Snake * snake2) {
     }
   }
 }
+
+void Snake::Reverse() {
+  switch (direction) {
+    case Direction::kUp: direction = Direction::kDown; break;
+    case Direction::kDown: direction = Direction::kUp; break;
+    case Direction::kLeft: direction = Direction::kRight; break;
+    case Direction::kRight: direction = Direction::kLeft; break;
+  }
+}

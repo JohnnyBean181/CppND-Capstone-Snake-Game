@@ -3,6 +3,7 @@
 #include "game.h"
 #include "game2p.h"
 #include "gamepvc.h"
+#include "game_adv_food.h"
 #include "renderer.h"
 #include "menu.h"
 
@@ -30,9 +31,12 @@ int main() {
         {
           int lives = 3;
           while (lives>0) {
-            Game game(kGridWidth, kGridHeight);
-            game.Run(controller, renderer, kMsPerFrame);
-            std::cout << "Good Game!\n";
+            GameAdvFood game(kGridWidth, kGridHeight);
+            if (game.Run(controller, renderer, kMsPerFrame) == -1) {
+              std::cout << "Return to menu!\n";
+              break;
+            }
+            std::cout << "Good game!\n";
             std::cout << "Score: " << game.GetScore() << "\n";
             std::cout << "Size: " << game.GetSize() << "\n";
             lives--;
