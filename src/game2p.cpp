@@ -51,10 +51,10 @@ std::string Game2P::Run(Controller const &controller, Renderer &renderer,
 
     if (!_snake->alive or !_snake_2nd->alive) {
       running = false;
-      SDL_Delay(2000);
+      SDL_Delay(2000); // pause 2 seconds before leaving
     }
   }
-
+  // return who is the winner
   if (GetScore() > GetScore2()) {
     return "Player 1";
   } else 
@@ -71,7 +71,7 @@ void Game2P::Update() {
   _snake->Update();
   // also update snake2
   _snake_2nd->Update();
-
+  // scan snake 1
   int new_x = static_cast<int>(_snake->head_x);
   int new_y = static_cast<int>(_snake->head_y);
 
@@ -83,7 +83,7 @@ void Game2P::Update() {
     _snake->GrowBody();
     _snake->speed += 0.02;
   }
-
+  // then scan snake 2
   int new_x_2 = static_cast<int>(_snake_2nd->head_x);
   int new_y_2 = static_cast<int>(_snake_2nd->head_y);
 
@@ -95,9 +95,9 @@ void Game2P::Update() {
     _snake_2nd->GrowBody();
     _snake_2nd->speed += 0.02;
   }
-
+  // check if 2 snakes cross.
   _snake->CrossDetection(_snake_2nd.get());
   _snake_2nd->CrossDetection(_snake.get());
 }
-
+// return score for snake 2
 int Game2P::GetScore2() const { return score2; }

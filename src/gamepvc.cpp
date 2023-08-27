@@ -22,7 +22,7 @@ std::string GamePvC::Run(Controller const &controller, Renderer &renderer,
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, _snake.get());
-    _snake_robot->Redirect(food);
+    _snake_robot->Redirect(food); // AI control for robot snake
     Update();
     renderer.Render(_snake.get(), _snake_robot.get(), food);
 
@@ -49,10 +49,10 @@ std::string GamePvC::Run(Controller const &controller, Renderer &renderer,
 
     if (!_snake->alive or !_snake_robot->alive) {
       running = false;
-      SDL_Delay(2000);
+      SDL_Delay(2000); // pause 2 seconds before leaving
     }
   }
-
+  // return who is the winner
   if (GetScore() > GetScore2()) {
     return "Player";
   } else 
@@ -69,7 +69,7 @@ void GamePvC::Update() {
   _snake->Update();
   // also update robot snake
   _snake_robot->Update();
-
+  // scan snake 1
   int new_x = static_cast<int>(_snake->head_x);
   int new_y = static_cast<int>(_snake->head_y);
 
@@ -81,7 +81,7 @@ void GamePvC::Update() {
     _snake->GrowBody();
     _snake->speed += 0.02;
   }
-
+  // scan snake 2
   int new_x_2 = static_cast<int>(_snake_robot->head_x);
   int new_y_2 = static_cast<int>(_snake_robot->head_y);
 
@@ -93,9 +93,9 @@ void GamePvC::Update() {
     _snake_robot->GrowBody();
     _snake_robot->speed += 0.02;
   }
-
+  // check if 2 snakes cross.
   _snake->CrossDetection(_snake_robot.get());
   _snake_robot->CrossDetection(_snake.get());
 }
-
+// return score for snake 2
 int GamePvC::GetScore2() const { return score2; }

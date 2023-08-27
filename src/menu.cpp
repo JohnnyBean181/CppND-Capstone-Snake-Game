@@ -13,7 +13,7 @@ int Menu::Run(Controller const &controller, Renderer &renderer) {
     controller.HandleMenuInput(running, quit, menu_selected, menu_last_selected);
     selected = menu_selected;
     renderer.RenderMainMenu(menu_selected, menu_last_selected);
-    SDL_Delay(100);
+    SDL_Delay(100); // help CPU rest.
   }
   return selected;
 }

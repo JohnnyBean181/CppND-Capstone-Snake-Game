@@ -47,7 +47,7 @@ int GameAdvFood::Run(Controller const &controller, Renderer &renderer,
 
     // if user quit
     if (!running ) {
-      //Signal producer
+      //Signal producer to help it stop
 	    SDL_CondSignal( gCanProduce );
       force_break = true;
     }
@@ -55,8 +55,8 @@ int GameAdvFood::Run(Controller const &controller, Renderer &renderer,
     // if snake is not alive
     if (!_snake->alive ) {
       running = false;
-      SDL_Delay(2000);
-      //Signal producer
+      SDL_Delay(2000); // pause for 2 sec before leaving
+      //Signal producer to help it stop
 	    SDL_CondSignal( gCanProduce );
     }
   }
@@ -94,7 +94,7 @@ void GameAdvFood::Update() {
     CleanFood();
     //Signal producer
     SDL_CondSignal( gCanProduce );
-
+    // reverse the snake if poisonous food is eaten
     if (food->IsPoisonous()) {
         _snake->Reverse();
     }
@@ -114,7 +114,7 @@ bool GameAdvFood::IsFoodAvailable() {
 }
 
 void GameAdvFood::MakeFood() {
-
+  // initialize or refresh Food object.
   int x, y;
   while (true) {
     x = random_w(engine);
@@ -122,13 +122,13 @@ void GameAdvFood::MakeFood() {
     // Check that the location is not occupied by a snake item before placing
     // food.
     if (!_snake->SnakeCell(x, y)) {
-      food = std::make_unique<Food>(x, y);
+      food = std::make_unique<Food>(x, y); // by assigning new value, old food will be recycled by C++
       is_food_available = true;
       return;
     }
   }
 }
-
+// return if the food should be refreshed.
 bool GameAdvFood::IsFoodDecayed(Uint32 current_timestamp) {
     Uint32 time_gap = current_timestamp - food->GetTimeStamp();
 
@@ -138,7 +138,7 @@ bool GameAdvFood::IsFoodDecayed(Uint32 current_timestamp) {
     
     return false;
 }
-
+// set the food as unavailable, especially after food is eaten or decayed.
 void GameAdvFood::CleanFood() {
     is_food_available = false;
 }

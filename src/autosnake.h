@@ -11,10 +11,10 @@ public:
         : Snake(grid_width, grid_height){};
 
     // by calling this func,
-    // auto snake knows how to walk around the panel.
+    // auto snake knows how to move.
     void Redirect(SDL_Point food);
 
-    // turn the direction to the left
+    // turn direction to the left
     void TurnLeft();
 
 

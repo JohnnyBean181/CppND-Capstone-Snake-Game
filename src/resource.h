@@ -2,7 +2,7 @@
 #define RESOURCE_H
 
 #include "ltexture.h"
-
+// USED TO SAVE COMMON RESOURCES
 //Scene textures
 extern LTexture gRedTexture;
 extern LTexture gGreenTexture;

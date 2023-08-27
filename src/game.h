@@ -23,7 +23,7 @@ class Game {
   // Snake snake;
   std::unique_ptr<Snake> _snake;
   // std::unique_ptr<AutoSnake> _robotSnake;
-  SDL_Point food;
+  SDL_Point food; // just a point
 
   std::random_device dev;
   std::mt19937 engine;
@@ -33,7 +33,7 @@ class Game {
   int score{0};
 
   void PlaceFood();
-  virtual void Update()=0;
+  virtual void Update()=0; // be overrided later.
 
 };
 

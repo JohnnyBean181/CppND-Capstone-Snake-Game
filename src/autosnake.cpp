@@ -8,12 +8,12 @@ void AutoSnake::Redirect(SDL_Point food) {
 
   block.x = static_cast<int>(head_x) * block.w;
   block.y = static_cast<int>(head_y) * block.h;
-
+  // move horizontally
   if (food.x != static_cast<int>(head_x)) {
     if (direction!=Direction::kLeft && direction!=Direction::kRight){
       TurnLeft();
     }
-  }
+  }// then move horizontally
   else if (food.y != static_cast<int>(head_y)) {
     if (direction!=Direction::kUp && direction!=Direction::kDown) {
       TurnLeft();

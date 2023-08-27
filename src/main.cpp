@@ -27,7 +27,7 @@ int main() {
       break;
     }
     switch(menu.GetSelectId()) {
-      case 0:
+      case 0: // solo game with 3 lives per game
         {
           int lives = 3;
           while (lives>0) {
@@ -44,7 +44,7 @@ int main() {
           }
           break;
         }
-      case 1:
+      case 1: // pvp game with 1 life per game
         {
           Game2P game2p(kGridWidth, kGridHeight);
           
@@ -52,7 +52,7 @@ int main() {
           std::cout << "Winner is " << winner << "!" << std::endl;
         }
         break;
-      case 2:
+      case 2: // pvc game with 1 life per game
         {
           GamePvC game_pvc(kGridWidth, kGridHeight);
           
@@ -60,7 +60,7 @@ int main() {
           std::cout << "Winner is " << winner << "!" << std::endl;
         }
         break;
-      case 3:
+      case 3: // 
         running = false;
         break;
     }
