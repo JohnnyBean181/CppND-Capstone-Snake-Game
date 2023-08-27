@@ -32,9 +32,7 @@ public:
     bool running{true};
 
 private:
-    void Update();
-    // int Producer( void *data );
-    // void Produce();
+    void Update() override;
     std::unique_ptr<Food> food;
     SDL_Thread* producerThread;
     SDL_Thread* consumerThread;

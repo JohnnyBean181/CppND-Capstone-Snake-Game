@@ -17,4 +17,5 @@ SDL_mutex* gBufferLock = NULL;
 
 // The conditions
 SDL_cond* gCanProduce = NULL;
-SDL_cond* gCanConsume = NULL;
+SDL_cond* gCanEat = NULL;
+SDL_cond* gCanThrow = NULL;

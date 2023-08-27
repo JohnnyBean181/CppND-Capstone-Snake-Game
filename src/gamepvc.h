@@ -23,7 +23,7 @@ public:
     int GetScore2() const;
 
 private:
-    void Update();
+    void Update() override;
     std::unique_ptr<AutoSnake> _snake_robot;
     // score of the 2nd snake
     int score2{0};

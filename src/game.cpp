@@ -70,31 +70,5 @@ void Game::PlaceFood() {
   }
 }
 
-void Game::Update() {
-  if (!_snake->alive) return;
-
-  // by calling Redirect(),
-  // robot snake will walk around the panel.
-  // but robot snake neither eat food
-  // nor run into normal snake.
-  // _robotSnake->Redirect();
-
-  _snake->Update();
-  // also update robot snake
-  //_robotSnake->Update();
-
-  int new_x = static_cast<int>(_snake->head_x);
-  int new_y = static_cast<int>(_snake->head_y);
-
-  // Check if there's food over here
-  if (food.x == new_x && food.y == new_y) {
-    score++;
-    PlaceFood();
-    // Grow snake and increase speed.
-    _snake->GrowBody();
-    _snake->speed += 0.02;
-  }
-}
-
 int Game::GetScore() const { return score; }
 int Game::GetSize() const { return _snake->size; }

@@ -33,7 +33,7 @@ class Game {
   int score{0};
 
   void PlaceFood();
-  void Update();
+  virtual void Update()=0;
 
 };
 

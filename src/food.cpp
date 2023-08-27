@@ -9,7 +9,7 @@ Food::Food (int x, int y){
     srand( SDL_GetTicks() );
     time_to_decay = 6 + rand() % 6;
 
-    // set up poisonous
+    // set up poisoness
     if (rand() % 5 == 0) {
         type = FoodType::poisonous;
     } else {

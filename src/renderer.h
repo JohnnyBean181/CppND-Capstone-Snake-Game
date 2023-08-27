@@ -24,8 +24,8 @@ extern LTexture gTextTexture_pvc;
 extern LTexture gTextTexture_exit;
 
 extern SDL_mutex* gBufferLock;
-extern SDL_cond* gCanProduce;
-extern SDL_cond* gCanConsume;
+extern SDL_cond* gCanEat;
+extern SDL_cond* gCanThrow;
 
 class Renderer {
  public:

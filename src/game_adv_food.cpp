@@ -3,7 +3,6 @@
 GameAdvFood::GameAdvFood(std::size_t grid_width, std::size_t grid_height)
     : Game(grid_width, grid_height),
     is_food_available(false){
-
     producerThread = SDL_CreateThread( Producer, "Producer", this );
     consumerThread = SDL_CreateThread( Consumer, "Consumer", this );
 }
@@ -49,7 +48,7 @@ int GameAdvFood::Run(Controller const &controller, Renderer &renderer,
     // if user quit
     if (!running ) {
       //Signal producer
-	  SDL_CondSignal( gCanProduce );
+	    SDL_CondSignal( gCanProduce );
       force_break = true;
     }
 
@@ -58,7 +57,7 @@ int GameAdvFood::Run(Controller const &controller, Renderer &renderer,
       running = false;
       SDL_Delay(2000);
       //Signal producer
-	  SDL_CondSignal( gCanProduce );
+	    SDL_CondSignal( gCanProduce );
     }
   }
 
@@ -86,7 +85,7 @@ void GameAdvFood::Update() {
   // std::cout << "food available" << IsFoodAvailable() << std::endl;
   // Check if there's food over here
   if( !IsFoodAvailable() ) {
-    SDL_CondWait( gCanConsume, gBufferLock );
+    SDL_CondWait( gCanEat, gBufferLock );
   }
   // std::cout << food->GetPosition() << std::endl; 
   if (food->GetPosition()->x == new_x && food->GetPosition()->y == new_y) {
@@ -132,6 +131,7 @@ void GameAdvFood::MakeFood() {
 
 bool GameAdvFood::IsFoodDecayed(Uint32 current_timestamp) {
     Uint32 time_gap = current_timestamp - food->GetTimeStamp();
+
     if ( time_gap > food->GetDecayTime()*1000) {
         return true;
     }

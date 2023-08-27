@@ -15,7 +15,8 @@ extern SDL_mutex* gBufferLock;
 
 // The conditions
 extern SDL_cond* gCanProduce;
-extern SDL_cond* gCanConsume;
+extern SDL_cond* gCanEat;
+extern SDL_cond* gCanThrow;
 
 int Producer( void* data );
 int Consumer( void* data );

@@ -26,11 +26,13 @@ int Producer( void *data )
 
 int Consumer( void *data )
 {
-	// printf( "\nConsumer started...\n" );
+	// printf( "Consumer started...\n" );
 
 	//Seed thread random
 	// srand( SDL_GetTicks() );
     GameAdvFood* game = (GameAdvFood *)data;
+
+	// SDL_Delay( 200 );
 
     while(game->running) {
         //Wait
@@ -60,14 +62,15 @@ void Produce(GameAdvFood* game)
 
 	//Fill and show buffer
 	game->MakeFood();
-	//printf( "\nProduced %d\n", gData );
-    //printf( "\nFood placed! \n" );
+	//printf( "Produced %d\n", gData );
+    // printf( "Food placed! \n" );
 	
 	//Unlock
 	SDL_UnlockMutex( gBufferLock );
 	
 	//Signal consumer
-	SDL_CondSignal( gCanConsume );
+	SDL_CondSignal( gCanEat );
+	SDL_CondSignal( gCanThrow );
 }
 
 void Consume(GameAdvFood* game)
@@ -79,8 +82,9 @@ void Consume(GameAdvFood* game)
 	if( !game->IsFoodAvailable() )
 	{
 		//Wait for buffer to be filled
+
 		//printf( "\nConsumer encountered empty buffer, waiting for producer to fill buffer...\n" );
-		SDL_CondWait( gCanConsume, gBufferLock );
+		SDL_CondWait( gCanThrow, gBufferLock );
 	}
 
 	//Show and empty buffer

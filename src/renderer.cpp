@@ -124,7 +124,8 @@ bool Renderer::LoadImage() {
 
   //Create conditions
   gCanProduce = SDL_CreateCond();
-  gCanConsume = SDL_CreateCond();
+  gCanEat = SDL_CreateCond();
+  gCanThrow = SDL_CreateCond();
 
 	return success;
 }
@@ -143,9 +144,11 @@ Renderer::~Renderer() {
 
   //Destroy conditions
   SDL_DestroyCond (gCanProduce );
-  SDL_DestroyCond (gCanConsume );
+  SDL_DestroyCond (gCanEat );
+  SDL_DestroyCond (gCanThrow );
   gCanProduce = NULL;
-  gCanConsume = NULL;
+  gCanEat = NULL;
+  gCanThrow = NULL;
 
   //Destroy window
   SDL_DestroyRenderer( sdl_renderer );
@@ -333,7 +336,7 @@ void Renderer::Render(Snake* snake1, Snake* snake2, SDL_Point const &food) {
   block.x = static_cast<int>(snake2->head_x) * block.w;
   block.y = static_cast<int>(snake2->head_y) * block.h;
   if (snake2->alive) {
-    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x2A, 0x7C, 0xFF);
+    SDL_SetRenderDrawColor(sdl_renderer, 0xCC, 0x2A, 0x00, 0xFF);
   } else {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
