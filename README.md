@@ -22,9 +22,13 @@ This is my own version of Snake Game based on demo project from [Udacity C++ Nan
 ## Basic Build Instructions
 
 1. Clone this repo.
-2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./SnakeGame`.
+2. Make sure necessary packages are installed.
+3. try: `sudo apt-get install libsdl2-dev`
+4. try: `sudo apt-get install libsdl2-image-dev`
+5. try: `sudo apt-get install libsdl2-ttf-dev`
+6. Make a build directory in the top level directory: `mkdir build && cd build`
+7. Compile: `cmake .. && make`
+8. Run it: `./SnakeGame`.
 
 ## New Features In This Project
 

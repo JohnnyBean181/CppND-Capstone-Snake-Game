@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2
+CXX_INCLUDES = -I/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/src -isystem /usr/include/SDL2
 
 CXX_FLAGS =   -std=c++17 -std=gnu++17
 

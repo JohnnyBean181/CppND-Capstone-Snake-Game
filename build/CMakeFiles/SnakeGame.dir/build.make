@@ -318,6 +318,7 @@ SnakeGame: CMakeFiles/SnakeGame.dir/src/multithreads.cpp.o
 SnakeGame: CMakeFiles/SnakeGame.dir/build.make
 SnakeGame: /usr/lib/x86_64-linux-gnu/libSDL2.so
 SnakeGame: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
+SnakeGame: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 SnakeGame: CMakeFiles/SnakeGame.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/johnnybean/Documents/UDacity/C++/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable SnakeGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SnakeGame.dir/link.txt --verbose=$(VERBOSE)
