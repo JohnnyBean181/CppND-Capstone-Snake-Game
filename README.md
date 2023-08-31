@@ -2,7 +2,7 @@
 
 This is my own version of Snake Game based on demo project from [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
-<img src="snake_game.png"/>
+<img src="image/snake_game.png"/>
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -34,13 +34,13 @@ This is my own version of Snake Game based on demo project from [Udacity C++ Nan
 
 1. Menu: Implemented an easy menu to provide better UI.
 
- <img src="menu.png"/>
+ <img src="image/menu.png"/>
 
 2. 1 Player Mode (1P)
 
 * Snake's head is decorated with particles. 
 
- <img src="particles.png"/>
+ <img src="image/particles.png"/>
 
 * Poisonous food type introduced. When it is consumed, the snake's direction will be reversed. (Refer to `game_adv_food.cpp`, line 98-100)
 
@@ -52,7 +52,7 @@ This is my own version of Snake Game based on demo project from [Udacity C++ Nan
 
 * Introduce Producer and Consumer mechanism to create and delete food. In specific, there is one main thread and 2 additional threads being responsible for this. (Refer to `multithreads.cpp`, all lines)
 
-<img src="producer.png"/>
+<img src="image/producer.png"/>
 
 After produced by thread 1, the food could be consumed in two ways: 1) "eaten" in main thread, 2) "thrown away" in thread 2 after a few seconds.
 
@@ -60,7 +60,7 @@ After produced by thread 1, the food could be consumed in two ways: 1) "eaten" i
 
 * A second snake is incorporated allowing for 2 player competitions.
 
-<img src="pvp.png"/>
+<img src="image/pvp.png"/>
 
 Player 1 is in blue, and Player 2 is in red.
 
@@ -88,7 +88,7 @@ Player 1 is in blue, and Player 2 is in red.
 
 ### Class Structure
 
-<img src="structure.png"/>
+<img src="image/structure.png"/>
 The Snake gmae code consists of 4 main classes: <code>Game,Snake, Controller</code>, and <code>Renderer</code>.The image above shows how the code functions.
 
 1. To begin, <code>main</code> creates a <code>Controller</code>, a <code>Game</code>, and a <code>Renderer</code> object. <code>Game</code> stores a <code>Snake</code> object. 
@@ -98,7 +98,7 @@ The Snake gmae code consists of 4 main classes: <code>Game,Snake, Controller</co
 * `Producer` and `Consumer` are responsible for generating food and replacing old food.
 * `Particle` is stored in snake, and it is used for decoration.
 * Final code structure looks like this:
-<img src="structure_1p.png"/>
+<img src="image/structure_1p.png"/>
 4. PvP Mode: 
 
 * `Game` is inherited by `Game2P` in order to store two `Snake` objects.
@@ -106,12 +106,12 @@ The Snake gmae code consists of 4 main classes: <code>Game,Snake, Controller</co
 * Function `HandleInput` is overloaded in Class `Controler`.
 * Function `Render` is also overloaded in Class `Renderer`.
 
-<img src="structure_2p.png"/>
+<img src="image/structure_2p.png"/>
 5. PvC Mode: 
 
 * `Game` is inherited by `GamePvC` in order to store `Snake` and `AutoSnake`.
 * Function `Update` is overrided in Class `GamePvC` with new logic.
-<img src="structure_pvc.png"/>
+<img src="image/structure_pvc.png"/>
 
 ## Addressed Points
 

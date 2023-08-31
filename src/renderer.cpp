@@ -47,28 +47,28 @@ bool Renderer::LoadImage() {
 	bool success = true;
 
   //Load red texture
-	if( !gRedTexture.loadFromFile( sdl_renderer, "red.bmp" ) )
+	if( !gRedTexture.loadFromFile( sdl_renderer, "../bmp/red.bmp" ) )
 	{
 		printf( "Failed to load red texture!\n" );
 		success = false;
 	}
 
 	//Load green texture
-	if( !gGreenTexture.loadFromFile( sdl_renderer, "green.bmp" ) )
+	if( !gGreenTexture.loadFromFile( sdl_renderer, "../bmp/green.bmp" ) )
 	{
 		printf( "Failed to load green texture!\n" );
 		success = false;
 	}
 
 	//Load blue texture
-	if( !gBlueTexture.loadFromFile( sdl_renderer, "blue.bmp" ) )
+	if( !gBlueTexture.loadFromFile( sdl_renderer, "../bmp/blue.bmp" ) )
 	{
 		printf( "Failed to load blue texture!\n" );
 		success = false;
 	}
 
 	//Load shimmer texture
-	if( !gShimmerTexture.loadFromFile( sdl_renderer, "shimmer.bmp" ) )
+	if( !gShimmerTexture.loadFromFile( sdl_renderer, "../bmp/shimmer.bmp" ) )
 	{
 		printf( "Failed to load shimmer texture!\n" );
 		success = false;
@@ -81,7 +81,7 @@ bool Renderer::LoadImage() {
 	gShimmerTexture.setAlpha( 192 );
 
 	//Open the font
-	gFont = TTF_OpenFont( "lazy.ttf", 28 );
+	gFont = TTF_OpenFont( "../font/lazy.ttf", 28 );
 	if( gFont == NULL )
 	{
 		printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
